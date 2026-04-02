@@ -226,6 +226,23 @@
   letter-spacing: 0.04em;
 }
 
+.sr-badge {
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.12rem 0.4rem;
+  border-radius: 8px;
+  letter-spacing: 0.04em;
+  margin-left: 0.25rem;
+  animation: sr-glow 2s ease-in-out infinite;
+}
+
+@keyframes sr-glow {
+  0%, 100% { box-shadow: 0 0 4px rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 8px rgba(220, 38, 38, 0.6); }
+}
+
 .profile-relay-block {
   border-bottom: 1px solid var(--gray-200);
 }

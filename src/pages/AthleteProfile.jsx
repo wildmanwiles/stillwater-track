@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
 import athletes from '../data/athletes.json'
 import meetResults from '../data/meetResults.json'
+import { isSchoolRecord } from '../utils/recordCheck'
 import './AthleteProfile.css'
 
 const TIME_EVENTS = new Set(['100m', '200m', '400m', '800m', '1500m', '1600m', '3200m', '110m Hurdles', '100m Hurdles', '300m Hurdles', '60m Hurdles'])
@@ -195,7 +196,10 @@ export default function AthleteProfile() {
             {prEntries.map(([event, mark]) => (
               <div key={event} className="pr-row">
                 <span className="pr-event">{event}</span>
-                <span className="pr-mark">{mark}</span>
+                <span className="pr-mark">
+                  {mark}
+                  {isSchoolRecord(event, mark, athlete.gender, athlete.grade) && <span className="sr-badge" title="School Record">SR</span>}
+                </span>
               </div>
             ))}
           </div>
@@ -234,6 +238,7 @@ export default function AthleteProfile() {
                     <span className="profile-result-event">{r.event}</span>
                     <span className="profile-result-mark">
                       {r.mark}
+                      {isSchoolRecord(r.event, r.mark, r.gender, r.grade) && <span className="sr-badge" title="School Record">SR</span>}
                     </span>
                     <span className="profile-result-place">
                       {r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`}

@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
+import { isSchoolRecord } from '../utils/recordCheck'
 import './MeetResults.css'
 
 function findAthleteSlug(name) {
@@ -37,12 +38,24 @@ function ResultRow({ r }) {
       <div className="result-mark">
         {r.mark}
         {r.pr && <span className="sb-badge" title="Season Best 2026">SB</span>}
+        {isSchoolRecord(r.event, r.mark, r.gender, r.grade) && <span className="sr-badge" title="School Record">SR</span>}
       </div>
     </div>
   )
 }
 
+function getRelayGrade(athleteNames) {
+  for (const name of athleteNames) {
+    const [first, ...lastParts] = name.split(' ')
+    const last = lastParts.join(' ')
+    const a = athletes.find(x => x.first === first && x.last === last)
+    if (a) return a.grade
+  }
+  return 10
+}
+
 function RelayRow({ r }) {
+  const grade = getRelayGrade(r.athletes)
   return (
     <div className="result-row relay-row">
       <div className="result-place"><PlaceBadge place={r.place} /></div>
@@ -54,7 +67,10 @@ function RelayRow({ r }) {
           ))}
         </div>
       </div>
-      <div className="result-mark">{r.mark}</div>
+      <div className="result-mark">
+        {r.mark}
+        {isSchoolRecord(r.event, r.mark, r.gender, grade) && <span className="sr-badge" title="School Record">SR</span>}
+      </div>
     </div>
   )
 }

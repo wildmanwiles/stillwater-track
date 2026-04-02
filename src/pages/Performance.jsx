@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import speedBoard from '../data/speedBoard.json'
 import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
+import { isSchoolRecord } from '../utils/recordCheck'
 import './Performance.css'
 
 const MEDALS = ['🥇', '🥈', '🥉']
@@ -106,7 +107,10 @@ function EventRankings({ event, results, gender, label }) {
             <AthleteLink name={r.athlete} />
             <span className="perf-result-grade">{r.grade}th</span>
           </div>
-          <span className="perf-result-mark">{r.mark}</span>
+          <span className="perf-result-mark">
+            {r.mark}
+            {isSchoolRecord(r.event, r.mark, r.gender, r.grade) && <span className="sr-badge" title="School Record">SR</span>}
+          </span>
           <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
         </div>
       ))}
@@ -148,6 +152,16 @@ function EventSection({ event, results }) {
   )
 }
 
+function getRelayGrade(athleteNames) {
+  for (const name of athleteNames) {
+    const [first, ...lastParts] = name.split(' ')
+    const last = lastParts.join(' ')
+    const a = athletes.find(x => x.first === first && x.last === last)
+    if (a) return a.grade
+  }
+  return 10
+}
+
 function RelayEventCard({ event, relays }) {
   const boysResults = relays.filter(r => r.event === event && r.gender === 'M')
   const girlsResults = relays.filter(r => r.event === event && r.gender === 'F')
@@ -166,7 +180,10 @@ function RelayEventCard({ event, relays }) {
                 {i < 3 ? MEDALS[i] : <span className="perf-rank-num">{i + 1}</span>}
               </span>
               <div className="perf-result-info perf-relay-info">
-                <span className="perf-result-mark">{r.mark}</span>
+                <span className="perf-result-mark">
+                  {r.mark}
+                  {isSchoolRecord(r.event, r.mark, r.gender, getRelayGrade(r.athletes)) && <span className="sr-badge" title="School Record">SR</span>}
+                </span>
                 <div className="perf-relay-athletes">
                   {r.athletes.map((name, j) => (
                     <span key={j}><AthleteLink name={name} />{j < r.athletes.length - 1 ? ', ' : ''}</span>
