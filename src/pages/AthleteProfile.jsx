@@ -4,6 +4,96 @@ import athletes from '../data/athletes.json'
 import meetResults from '../data/meetResults.json'
 import './AthleteProfile.css'
 
+const TIME_EVENTS = new Set(['100m', '200m', '400m', '800m', '1500m', '1600m', '3200m', '110m Hurdles', '100m Hurdles', '300m Hurdles', '60m Hurdles'])
+
+function parseTime(mark) {
+  if (mark.includes(':')) {
+    const [min, sec] = mark.split(':')
+    return parseFloat(min) * 60 + parseFloat(sec)
+  }
+  return parseFloat(mark)
+}
+
+function parseMeasurement(mark) {
+  const match = mark.match(/^(\d+)'([\d.]+)/)
+  if (match) return parseFloat(match[1]) * 12 + parseFloat(match[2])
+  return 0
+}
+
+function buildProgression(seasonHistory) {
+  if (!seasonHistory || seasonHistory.length < 2) return []
+
+  // For each event in each season, find the best mark
+  const eventSeasons = {}
+  seasonHistory.forEach(season => {
+    season.results.forEach(r => {
+      if (!eventSeasons[r.event]) eventSeasons[r.event] = []
+      const existing = eventSeasons[r.event].find(s => s.season === season.season)
+      if (!existing) {
+        eventSeasons[r.event].push({ season: season.season, mark: r.mark })
+      } else {
+        // Keep the better mark
+        const isTime = TIME_EVENTS.has(r.event)
+        if (isTime) {
+          if (parseTime(r.mark) < parseTime(existing.mark)) existing.mark = r.mark
+        } else {
+          if (parseMeasurement(r.mark) > parseMeasurement(existing.mark)) existing.mark = r.mark
+        }
+      }
+    })
+  })
+
+  // Filter to events with 2+ seasons
+  return Object.entries(eventSeasons)
+    .filter(([, seasons]) => seasons.length >= 2)
+    .map(([event, seasons]) => {
+      const isTime = TIME_EVENTS.has(event)
+      // Find the all-time best
+      let bestMark = seasons[0].mark
+      seasons.forEach(s => {
+        if (isTime) {
+          if (parseTime(s.mark) < parseTime(bestMark)) bestMark = s.mark
+        } else {
+          if (parseMeasurement(s.mark) > parseMeasurement(bestMark)) bestMark = s.mark
+        }
+      })
+      return { event, seasons, bestMark, isTime }
+    })
+}
+
+function SeasonProgression({ seasonHistory }) {
+  const progressions = buildProgression(seasonHistory)
+  if (progressions.length === 0) return null
+
+  return (
+    <section className="profile-section">
+      <h2 className="profile-section-title">Season Progression</h2>
+      <div className="progression-list">
+        {progressions.map(({ event, seasons, bestMark, isTime }) => (
+          <div key={event} className="progression-row">
+            <span className="progression-event">{event}</span>
+            <div className="progression-marks">
+              {seasons.map((s, i) => {
+                const isBest = s.mark === bestMark
+                return (
+                  <span key={s.season} className="progression-entry">
+                    {i > 0 && <span className="progression-arrow">&rarr;</span>}
+                    <span className="progression-season">{s.season}:</span>
+                    <span className={`progression-mark ${isBest ? 'is-pb' : ''}`}>
+                      {s.mark}
+                      {isBest && <span className="progression-pb">PB</span>}
+                    </span>
+                  </span>
+                )
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function SeasonSection({ season, defaultOpen }) {
   const [open, setOpen] = useState(defaultOpen)
 
@@ -111,6 +201,8 @@ export default function AthleteProfile() {
           </div>
         </section>
       )}
+
+      <SeasonProgression seasonHistory={seasonHistory} />
 
       {seasonHistory.length > 0 && (
         <section className="profile-section">

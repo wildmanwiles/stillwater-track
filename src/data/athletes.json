@@ -366,7 +366,48 @@
       "200m": "27.70",
       "400m": "1:01.48"
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2025",
+        "grade": 10,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "13.58",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "27.70",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "400m",
+            "mark": "1:01.48",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "14.02",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 7,
@@ -411,7 +452,66 @@
       "200m": "31.59",
       "400m": "1:16.10"
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2024",
+        "grade": 9,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "15.64",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2024-04-27"
+          },
+          {
+            "event": "200m",
+            "mark": "33.65",
+            "meet": "Priest River Invite",
+            "date": "2024-04-20"
+          }
+        ]
+      },
+      {
+        "season": "2025",
+        "grade": 10,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "14.61",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "31.59",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "400m",
+            "mark": "1:16.10",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "15.54",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 9,
@@ -432,7 +532,84 @@
       "Discus": "71'1\"",
       "Javelin": "76'9\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2024",
+        "grade": 9,
+        "results": [
+          {
+            "event": "Shot Put",
+            "mark": "20'4\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2024-04-27"
+          },
+          {
+            "event": "Discus",
+            "mark": "65'7\"",
+            "meet": "Priest River Invite",
+            "date": "2024-04-20"
+          },
+          {
+            "event": "Javelin",
+            "mark": "70'3\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          }
+        ]
+      },
+      {
+        "season": "2025",
+        "grade": 10,
+        "results": [
+          {
+            "event": "Shot Put",
+            "mark": "20'5.25\"",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10"
+          },
+          {
+            "event": "Discus",
+            "mark": "65'7\"",
+            "meet": "Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "Javelin",
+            "mark": "76'9\"",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29",
+            "pr": true
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "Shot Put",
+            "mark": "22'2.5\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28",
+            "pr": true
+          },
+          {
+            "event": "Discus",
+            "mark": "71'1\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28",
+            "pr": true
+          },
+          {
+            "event": "Javelin",
+            "mark": "63'8\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 10,
@@ -450,10 +627,122 @@
       "Discus"
     ],
     "prs": {
+      "200m": "29.84",
+      "800m": "2:37.6",
+      "3200m": "15:12.22",
+      "110m Hurdles": "26.05",
       "300m Hurdles": "53.85",
-      "Discus": "74'7\""
+      "Shot Put": "27'2.5\"",
+      "Discus": "74'7\"",
+      "Javelin": "100'6\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2024",
+        "grade": 9,
+        "results": [
+          {
+            "event": "200m",
+            "mark": "29.84",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2024-04-27",
+            "pr": true
+          },
+          {
+            "event": "800m",
+            "mark": "2:37.6",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          },
+          {
+            "event": "Shot Put",
+            "mark": "27'2.5\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          },
+          {
+            "event": "Discus",
+            "mark": "72'6\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          },
+          {
+            "event": "Javelin",
+            "mark": "100'6\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2024-04-27",
+            "pr": true
+          }
+        ]
+      },
+      {
+        "season": "2025",
+        "grade": 10,
+        "results": [
+          {
+            "event": "800m",
+            "mark": "2:53.2",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "3200m",
+            "mark": "15:12.22",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "110m Hurdles",
+            "mark": "26.05",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "300m Hurdles",
+            "mark": "58.96",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10"
+          },
+          {
+            "event": "Shot Put",
+            "mark": "21'1.75\"",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10"
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "300m Hurdles",
+            "mark": "53.85",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28",
+            "pr": true
+          },
+          {
+            "event": "Shot Put",
+            "mark": "26'0.75\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          },
+          {
+            "event": "Discus",
+            "mark": "74'7\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 11,
@@ -489,13 +778,102 @@
       "4x800m Relay"
     ],
     "prs": {
+      "100m": "14.02",
+      "400m": "56.10",
       "800m": "2:20.91",
+      "1500m": "4:40.38",
       "1600m": "5:19.27",
       "3200m": "11:32.13",
-      "400m": "56.10",
-      "1500m": "4:40.38"
+      "Long Jump": "13'9.5\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2024",
+        "grade": 9,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "14.02",
+            "meet": "Priest River Invite",
+            "date": "2024-04-20",
+            "pr": true
+          },
+          {
+            "event": "400m",
+            "mark": "1:02.94",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          },
+          {
+            "event": "800m",
+            "mark": "2:30.8",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          },
+          {
+            "event": "1600m",
+            "mark": "5:51.4",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "13'9.5\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          }
+        ]
+      },
+      {
+        "season": "2025",
+        "grade": 10,
+        "results": [
+          {
+            "event": "800m",
+            "mark": "2:20.91",
+            "meet": "Priest River Invite",
+            "date": "2025-04-19",
+            "pr": true
+          },
+          {
+            "event": "1600m",
+            "mark": "5:19.27",
+            "meet": "Priest River Invite",
+            "date": "2025-04-19",
+            "pr": true
+          },
+          {
+            "event": "3200m",
+            "mark": "11:32.13",
+            "meet": "Priest River Invite",
+            "date": "2025-04-19",
+            "pr": true
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "400m",
+            "mark": "56.10",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28",
+            "pr": true
+          },
+          {
+            "event": "1500m",
+            "mark": "4:40.38",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 13,
@@ -530,13 +908,112 @@
       "4x800m Relay"
     ],
     "prs": {
-      "Long Jump": "16'9\"",
-      "Triple Jump": "35'8.5\"",
-      "High Jump": "5'6\"",
+      "400m": "1:00.74",
       "800m": "2:19.60",
-      "1600m": "5:14.7"
+      "1600m": "5:14.7",
+      "High Jump": "5'6\"",
+      "Long Jump": "16'9.25\"",
+      "Triple Jump": "35'8.5\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2024",
+        "grade": 9,
+        "results": [
+          {
+            "event": "400m",
+            "mark": "1:00.74",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "5'4\"",
+            "meet": "Priest River Invite",
+            "date": "2024-04-20"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "16'0.25\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2024-04-27"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "33'0.25\"",
+            "meet": "Priest River Invite",
+            "date": "2024-04-20"
+          }
+        ]
+      },
+      {
+        "season": "2025",
+        "grade": 10,
+        "results": [
+          {
+            "event": "800m",
+            "mark": "2:19.60",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29",
+            "pr": true
+          },
+          {
+            "event": "1600m",
+            "mark": "5:14.7",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26",
+            "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "5'6\"",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "16'9.25\"",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "35'6.5\"",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10"
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "High Jump",
+            "mark": "5'2\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "15'9.5\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "35'8.5\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 15,
@@ -553,11 +1030,88 @@
       "Shot Put"
     ],
     "prs": {
-      "Shot Put": "24'10\"",
+      "Shot Put": "24'10.25\"",
       "Discus": "86'9\"",
       "Javelin": "98'9\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2024",
+        "grade": 9,
+        "results": [
+          {
+            "event": "Shot Put",
+            "mark": "24'3\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          },
+          {
+            "event": "Discus",
+            "mark": "81'10\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          },
+          {
+            "event": "Javelin",
+            "mark": "87'6\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          }
+        ]
+      },
+      {
+        "season": "2025",
+        "grade": 10,
+        "results": [
+          {
+            "event": "Shot Put",
+            "mark": "24'10.25\"",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "Discus",
+            "mark": "86'9\"",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "Javelin",
+            "mark": "98'9\"",
+            "meet": "Priest River Invite",
+            "date": "2025-04-19",
+            "pr": true
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "Shot Put",
+            "mark": "23'6\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          },
+          {
+            "event": "Discus",
+            "mark": "77'5\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          },
+          {
+            "event": "Javelin",
+            "mark": "81'8\"",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 16,
@@ -720,7 +1274,72 @@
       "200m": "26.97",
       "400m": "59.15"
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2024",
+        "grade": 8,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "13.74",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          },
+          {
+            "event": "400m",
+            "mark": "1:02.94",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          }
+        ]
+      },
+      {
+        "season": "2025",
+        "grade": 9,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "13.23",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10"
+          },
+          {
+            "event": "200m",
+            "mark": "26.97",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "400m",
+            "mark": "59.15",
+            "meet": "Heritage State HS Triangular",
+            "date": "2025-05-10",
+            "pr": true
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 10,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "13.19",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "27.07",
+            "meet": "Ice Breaker Relays",
+            "date": "2026-03-28"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 24,
