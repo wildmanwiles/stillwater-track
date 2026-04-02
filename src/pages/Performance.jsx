@@ -1,18 +1,204 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import speedBoard from '../data/speedBoard.json'
+import meetResults from '../data/meetResults.json'
+import athletes from '../data/athletes.json'
 import './Performance.css'
 
 const MEDALS = ['🥇', '🥈', '🥉']
 
 const TABS = [
-  { id: 'sprints', label: 'Sprints', icon: '🏃', desc: 'Short distance events including 100m, 200m, and 400m results.' },
-  { id: 'throws', label: 'Throws', icon: '💪', desc: 'Shot Put, Discus, and Javelin results.' },
-  { id: 'jumps', label: 'Jumps', icon: '🦘', desc: 'High Jump, Long Jump, and Triple Jump results.' },
-  { id: 'hurdles', label: 'Hurdles', icon: '🚧', desc: '110m Hurdles and 300m Hurdles results.' },
-  { id: 'distance', label: 'Distance', icon: '🏅', desc: '800m, 1600m, 3200m, and distance relay results.' },
-  { id: 'relays', label: 'Relays', icon: '🏃‍♂️', desc: '4x100m, 4x200m, 4x400m, 4x800m relay results. Each relay entry will show the four athletes on the team and their combined time.' },
-  { id: 'speed-board', label: 'Speed Board', icon: '⚡', desc: '25M to 10M Fly Leaderboard — raw speed rankings.' },
+  { id: 'sprints', label: 'Sprints', icon: '🏃', events: ['100m', '200m', '400m'] },
+  { id: 'throws', label: 'Throws', icon: '💪', events: ['Shot Put', 'Discus', 'Javelin'] },
+  { id: 'jumps', label: 'Jumps', icon: '🦘', events: ['High Jump', 'Long Jump', 'Triple Jump'] },
+  { id: 'hurdles', label: 'Hurdles', icon: '🚧', events: ['110m Hurdles', '100m Hurdles', '300m Hurdles'] },
+  { id: 'distance', label: 'Distance', icon: '🏅', events: ['800m', '1500m', '3200m'] },
+  { id: 'relays', label: 'Relays', icon: '🏃‍♂️', events: [] },
+  { id: 'speed-board', label: 'Speed Board', icon: '⚡', events: [] },
 ]
+
+const TIME_EVENTS = new Set(['100m', '200m', '400m', '800m', '1500m', '3200m', '110m Hurdles', '100m Hurdles', '300m Hurdles'])
+const FIELD_EVENTS = new Set(['High Jump', 'Long Jump', 'Triple Jump', 'Shot Put', 'Discus', 'Javelin'])
+
+function parseTime(mark) {
+  if (mark.includes(':')) {
+    const [min, sec] = mark.split(':')
+    return parseFloat(min) * 60 + parseFloat(sec)
+  }
+  return parseFloat(mark)
+}
+
+function parseMeasurement(mark) {
+  const match = mark.match(/^(\d+)'([\d.]+)/)
+  if (match) return parseFloat(match[1]) * 12 + parseFloat(match[2])
+  return 0
+}
+
+function findAthleteId(name) {
+  const [first, ...lastParts] = name.split(' ')
+  const last = lastParts.join(' ')
+  const athlete = athletes.find(a => a.first === first && a.last === last)
+  return athlete ? athlete.id : null
+}
+
+function buildSeasonBests() {
+  const bests = {}
+
+  meetResults.forEach(meet => {
+    meet.results.forEach(r => {
+      const key = `${r.gender}|${r.event}|${r.athlete}`
+      if (!bests[key]) {
+        bests[key] = { ...r, meetName: meet.meetName, meetId: meet.meetId }
+      } else {
+        const isTime = TIME_EVENTS.has(r.event)
+        const isField = FIELD_EVENTS.has(r.event)
+        if (isTime) {
+          if (parseTime(r.mark) < parseTime(bests[key].mark)) {
+            bests[key] = { ...r, meetName: meet.meetName, meetId: meet.meetId }
+          }
+        } else if (isField) {
+          if (parseMeasurement(r.mark) > parseMeasurement(bests[key].mark)) {
+            bests[key] = { ...r, meetName: meet.meetName, meetId: meet.meetId }
+          }
+        }
+      }
+    })
+  })
+
+  return Object.values(bests)
+}
+
+function buildRelayResults() {
+  const relays = []
+  meetResults.forEach(meet => {
+    meet.relays.forEach(r => {
+      relays.push({ ...r, meetName: meet.meetName, meetId: meet.meetId })
+    })
+  })
+  return relays
+}
+
+function AthleteLink({ name }) {
+  const id = findAthleteId(name)
+  if (id) return <Link to={`/athlete/${id}`} className="perf-athlete-link">{name}</Link>
+  return <span>{name}</span>
+}
+
+function EventRankings({ event, results, gender, label }) {
+  const filtered = results.filter(r => r.event === event && r.gender === gender)
+
+  const isTime = TIME_EVENTS.has(event)
+  const sorted = [...filtered].sort((a, b) => {
+    if (isTime) return parseTime(a.mark) - parseTime(b.mark)
+    return parseMeasurement(b.mark) - parseMeasurement(a.mark)
+  })
+
+  if (sorted.length === 0) return null
+
+  return (
+    <div className="perf-event-section">
+      {sorted.map((r, i) => (
+        <div key={`${r.athlete}-${i}`} className="perf-result-row">
+          <span className="perf-rank">
+            {i < 3 ? MEDALS[i] : <span className="perf-rank-num">{i + 1}</span>}
+          </span>
+          <div className="perf-result-info">
+            <AthleteLink name={r.athlete} />
+            <span className="perf-result-grade">{r.grade}th</span>
+          </div>
+          <span className="perf-result-mark">{r.mark}</span>
+          <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function GenderEventBlock({ event, results, gender, label }) {
+  const filtered = results.filter(r => r.event === event && r.gender === gender)
+  if (filtered.length === 0) return null
+
+  return (
+    <div className="perf-gender-block">
+      <h4 className="perf-gender-label">{label}</h4>
+      <EventRankings event={event} results={results} gender={gender} label={label} />
+    </div>
+  )
+}
+
+function EventSection({ event, results }) {
+  const hasBoys = results.some(r => r.event === event && r.gender === 'M')
+  const hasGirls = results.some(r => r.event === event && r.gender === 'F')
+
+  if (!hasBoys && !hasGirls) {
+    return (
+      <div className="perf-event-card">
+        <h3 className="perf-event-title">{event}</h3>
+        <p className="perf-no-results">No results recorded yet this season</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="perf-event-card">
+      <h3 className="perf-event-title">{event}</h3>
+      <GenderEventBlock event={event} results={results} gender="M" label="Boys" />
+      <GenderEventBlock event={event} results={results} gender="F" label="Girls" />
+    </div>
+  )
+}
+
+function RelaySection({ relays }) {
+  const boysRelays = relays.filter(r => r.gender === 'M')
+  const girlsRelays = relays.filter(r => r.gender === 'F')
+
+  const renderRelayGroup = (items, label) => {
+    if (items.length === 0) return null
+    const byEvent = {}
+    items.forEach(r => {
+      if (!byEvent[r.event]) byEvent[r.event] = []
+      byEvent[r.event].push(r)
+    })
+
+    return (
+      <div className="perf-gender-block">
+        <h4 className="perf-gender-label">{label}</h4>
+        {Object.entries(byEvent).map(([event, entries]) => (
+          <div key={event} className="perf-relay-event">
+            <h5 className="perf-relay-event-name">{event}</h5>
+            {entries.map((r, i) => (
+              <div key={i} className="perf-result-row relay-result-row">
+                <span className="perf-rank">
+                  {r.place <= 3 ? MEDALS[r.place - 1] : <span className="perf-rank-num">{r.place}</span>}
+                </span>
+                <div className="perf-result-info perf-relay-info">
+                  <span className="perf-result-mark">{r.mark}</span>
+                  <div className="perf-relay-athletes">
+                    {r.athletes.map((name, j) => (
+                      <span key={j}><AthleteLink name={name} />{j < r.athletes.length - 1 ? ', ' : ''}</span>
+                    ))}
+                  </div>
+                </div>
+                <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  if (boysRelays.length === 0 && girlsRelays.length === 0) {
+    return <p className="perf-no-results">No relay results recorded yet this season</p>
+  }
+
+  return (
+    <div className="perf-event-card">
+      {renderRelayGroup(boysRelays, 'Boys')}
+      {renderRelayGroup(girlsRelays, 'Girls')}
+    </div>
+  )
+}
 
 function LeaderTable({ title, entries }) {
   const sorted = [...entries].sort((a, b) => b.mph - a.mph)
@@ -52,20 +238,12 @@ function LeaderTable({ title, entries }) {
   )
 }
 
-function EmptyState({ tab }) {
-  return (
-    <div className="perf-empty">
-      <span className="perf-empty-icon">{tab.icon}</span>
-      <h3>{tab.label}</h3>
-      <p className="perf-empty-desc">{tab.desc}</p>
-      <p className="perf-empty-msg">Meet results will appear here after results are entered.</p>
-    </div>
-  )
-}
-
 export default function Performance() {
-  const [activeTab, setActiveTab] = useState('speed-board')
+  const [activeTab, setActiveTab] = useState('sprints')
   const current = TABS.find(t => t.id === activeTab)
+
+  const seasonBests = useMemo(() => buildSeasonBests(), [])
+  const relayResults = useMemo(() => buildRelayResults(), [])
 
   return (
     <div className="page performance">
@@ -93,8 +271,18 @@ export default function Performance() {
             <LeaderTable title="Boys" entries={speedBoard.males} />
             <LeaderTable title="Girls" entries={speedBoard.females} />
           </div>
+        ) : activeTab === 'relays' ? (
+          <>
+            <p className="perf-season-note">2026 Season Best Performances — updated after each meet</p>
+            <RelaySection relays={relayResults} />
+          </>
         ) : (
-          <EmptyState tab={current} />
+          <>
+            <p className="perf-season-note">2026 Season Best Performances — updated after each meet</p>
+            {current.events.map(event => (
+              <EventSection key={event} event={event} results={seasonBests} />
+            ))}
+          </>
         )}
       </div>
     </div>

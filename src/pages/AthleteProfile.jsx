@@ -1,7 +1,41 @@
 import { useParams, Link } from 'react-router-dom'
+import { useState } from 'react'
 import athletes from '../data/athletes.json'
 import meetResults from '../data/meetResults.json'
 import './AthleteProfile.css'
+
+function SeasonSection({ season, defaultOpen }) {
+  const [open, setOpen] = useState(defaultOpen)
+
+  return (
+    <div className="season-block">
+      <button className={`season-header ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
+        <span className="season-label">{season.season}</span>
+        <span className="season-grade">Grade {season.grade}</span>
+        <span className="season-toggle">{open ? '−' : '+'}</span>
+      </button>
+      {open && (
+        <div className="season-results">
+          {season.results.map((r, i) => (
+            <div key={i} className="season-result-row">
+              <span className="season-result-event">{r.event}</span>
+              <span className="season-result-mark">
+                {r.mark}
+                {r.pr && <span className="sb-badge" title="Season Best">SB</span>}
+              </span>
+              <span className="season-result-meet">{r.meet}</span>
+              <span className="season-result-date">
+                {new Date(r.date + 'T00:00:00').toLocaleDateString('en-US', {
+                  month: 'short', day: 'numeric', year: 'numeric'
+                })}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function AthleteProfile() {
   const { id } = useParams()
@@ -32,6 +66,7 @@ export default function AthleteProfile() {
 
   const prs = athlete.prs || {}
   const prEntries = Object.entries(prs)
+  const seasonHistory = athlete.seasonHistory || []
 
   return (
     <div className="page athlete-profile">
@@ -66,7 +101,7 @@ export default function AthleteProfile() {
 
       {prEntries.length > 0 && (
         <section className="profile-section">
-          <h2 className="profile-section-title">Personal Records</h2>
+          <h2 className="profile-section-title">All-Time Personal Records</h2>
           <div className="pr-list">
             {prEntries.map(([event, mark]) => (
               <div key={event} className="pr-row">
@@ -78,9 +113,18 @@ export default function AthleteProfile() {
         </section>
       )}
 
+      {seasonHistory.length > 0 && (
+        <section className="profile-section">
+          <h2 className="profile-section-title">Season History</h2>
+          {[...seasonHistory].reverse().map((season, i) => (
+            <SeasonSection key={season.season} season={season} defaultOpen={i === 0} />
+          ))}
+        </section>
+      )}
+
       {athleteResults.length > 0 && (
         <section className="profile-section">
-          <h2 className="profile-section-title">Meet Results</h2>
+          <h2 className="profile-section-title">2026 Meet Results</h2>
           {athleteResults.map(({ meet, individual, relays }) => (
             <div key={meet.meetId} className="profile-meet">
               <div className="profile-meet-header">
@@ -99,7 +143,7 @@ export default function AthleteProfile() {
                     <span className="profile-result-event">{r.event}</span>
                     <span className="profile-result-mark">
                       {r.mark}
-                      {r.pr && <span className="pr-badge">PR</span>}
+                      {r.pr && <span className="sb-badge" title="Season Best 2026">SB</span>}
                     </span>
                     <span className="profile-result-place">
                       {r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`}
@@ -121,7 +165,7 @@ export default function AthleteProfile() {
         </section>
       )}
 
-      {athlete.role !== 'manager' && athleteResults.length === 0 && prEntries.length === 0 && (
+      {athlete.role !== 'manager' && athleteResults.length === 0 && prEntries.length === 0 && seasonHistory.length === 0 && (
         <div className="profile-empty">No results recorded yet.</div>
       )}
     </div>

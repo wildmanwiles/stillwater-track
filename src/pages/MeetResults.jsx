@@ -36,7 +36,7 @@ function ResultRow({ r }) {
       </div>
       <div className="result-mark">
         {r.mark}
-        {r.pr && <span className="pr-badge">PR</span>}
+        {r.pr && <span className="sb-badge" title="Season Best 2026">SB</span>}
       </div>
     </div>
   )

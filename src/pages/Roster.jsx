@@ -12,6 +12,7 @@ export default function Roster() {
 
   const filtered = useMemo(() => {
     return athletes
+      .filter(a => a.active !== false)
       .filter(a => gender === 'all' || a.gender === gender)
       .filter(a => grade === 'all' || a.grade === Number(grade))
       .filter(a => role === 'all' || a.role === role)
