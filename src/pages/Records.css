@@ -2,13 +2,28 @@
   text-align: center;
 }
 
+.records-division {
+  max-width: 1000px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+}
+
+.records-division-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--gold);
+}
+
 .records-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 .records-section {
@@ -106,10 +121,29 @@
   opacity: 0.6;
 }
 
+.records .new-record td {
+  background: var(--gold-pale, #fef9e7);
+}
+
+.new-record-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: 0.58rem;
+  font-weight: 800;
+  padding: 0.08rem 0.35rem;
+  border-radius: 6px;
+  margin-left: 0.35rem;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+
 @media (max-width: 768px) {
+  .records-division {
+    padding: 0 1rem;
+  }
   .records-grid {
     grid-template-columns: 1fr;
-    padding: 0 1rem;
   }
   .records-table {
     font-size: 0.82rem;

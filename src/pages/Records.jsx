@@ -17,13 +17,16 @@ function RecordSection({ title, data }) {
           </thead>
           <tbody>
             {data.map(rec => (
-              <tr key={rec.event} className={rec.mark === 'Record Pending' ? 'pending' : ''}>
+              <tr key={rec.event} className={`${rec.mark === '—' ? 'pending' : ''} ${rec.newRecord ? 'new-record' : ''}`}>
                 <td className="event-cell">{rec.event}</td>
-                <td className={`mark-cell ${rec.mark !== 'Record Pending' ? 'has-record' : ''}`}>
+                <td className={`mark-cell ${rec.mark !== '—' ? 'has-record' : ''}`}>
                   {rec.mark}
                 </td>
                 <td className="athlete-cell">{rec.athlete || '\u2014'}</td>
-                <td className="year-cell">{rec.year || '\u2014'}</td>
+                <td className="year-cell">
+                  {rec.year || '\u2014'}
+                  {rec.newRecord && <span className="new-record-badge">NEW</span>}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -37,14 +40,24 @@ export default function Records() {
   return (
     <div className="page records">
       <div className="page-header">
-        <h1 className="page-title">🏆 School Records</h1>
+        <h1 className="page-title">School Records</h1>
         <p className="page-subtitle">Stillwater Christian Track &amp; Field Record Book</p>
-        <p className="records-note">All-time school records — coming soon. Records will be added as they are verified.</p>
       </div>
 
-      <div className="records-grid">
-        <RecordSection title="Boys" data={records.boys} />
-        <RecordSection title="Girls" data={records.girls} />
+      <div className="records-division">
+        <h2 className="records-division-title">High School Records</h2>
+        <div className="records-grid">
+          <RecordSection title="Boys" data={records.highSchool.boys} />
+          <RecordSection title="Girls" data={records.highSchool.girls} />
+        </div>
+      </div>
+
+      <div className="records-division">
+        <h2 className="records-division-title">Jr. High Records</h2>
+        <div className="records-grid">
+          <RecordSection title="Boys" data={records.jrHigh.boys} />
+          <RecordSection title="Girls" data={records.jrHigh.girls} />
+        </div>
       </div>
     </div>
   )
