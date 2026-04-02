@@ -3,17 +3,17 @@ import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
 import './MeetResults.css'
 
-function findAthleteId(name) {
+function findAthleteSlug(name) {
   const [first, ...lastParts] = name.split(' ')
   const last = lastParts.join(' ')
   const athlete = athletes.find(a => a.first === first && a.last === last)
-  return athlete ? athlete.id : null
+  return athlete ? `${athlete.first}-${athlete.last}`.toLowerCase() : null
 }
 
 function AthleteLink({ name }) {
-  const id = findAthleteId(name)
-  if (id) {
-    return <Link to={`/athlete/${id}`} className="result-athlete-link">{name}</Link>
+  const slug = findAthleteSlug(name)
+  if (slug) {
+    return <Link to={`/athlete/${slug}`} className="result-athlete-link">{name}</Link>
   }
   return <span>{name}</span>
 }

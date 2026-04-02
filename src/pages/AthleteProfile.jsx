@@ -21,7 +21,6 @@ function SeasonSection({ season, defaultOpen }) {
               <span className="season-result-event">{r.event}</span>
               <span className="season-result-mark">
                 {r.mark}
-                {r.pr && <span className="sb-badge" title="Season Best">SB</span>}
               </span>
               <span className="season-result-meet">{r.meet}</span>
               <span className="season-result-date">
@@ -38,8 +37,8 @@ function SeasonSection({ season, defaultOpen }) {
 }
 
 export default function AthleteProfile() {
-  const { id } = useParams()
-  const athlete = athletes.find(a => a.id === Number(id))
+  const { slug } = useParams()
+  const athlete = athletes.find(a => `${a.first}-${a.last}`.toLowerCase() === slug)
 
   if (!athlete) {
     return (
@@ -143,7 +142,6 @@ export default function AthleteProfile() {
                     <span className="profile-result-event">{r.event}</span>
                     <span className="profile-result-mark">
                       {r.mark}
-                      {r.pr && <span className="sb-badge" title="Season Best 2026">SB</span>}
                     </span>
                     <span className="profile-result-place">
                       {r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`}

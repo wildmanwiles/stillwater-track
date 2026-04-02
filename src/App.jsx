@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/performance" element={<Performance />} />
             <Route path="/records" element={<Records />} />
             <Route path="/results/:meetId" element={<MeetResults />} />
-            <Route path="/athlete/:id" element={<AthleteProfile />} />
+            <Route path="/athlete/:slug" element={<AthleteProfile />} />
           </Routes>
         </main>
         <Footer />

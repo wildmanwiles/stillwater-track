@@ -34,11 +34,11 @@ function parseMeasurement(mark) {
   return 0
 }
 
-function findAthleteId(name) {
+function findAthleteSlug(name) {
   const [first, ...lastParts] = name.split(' ')
   const last = lastParts.join(' ')
   const athlete = athletes.find(a => a.first === first && a.last === last)
-  return athlete ? athlete.id : null
+  return athlete ? `${athlete.first}-${athlete.last}`.toLowerCase() : null
 }
 
 function buildSeasonBests() {
@@ -79,8 +79,8 @@ function buildRelayResults() {
 }
 
 function AthleteLink({ name }) {
-  const id = findAthleteId(name)
-  if (id) return <Link to={`/athlete/${id}`} className="perf-athlete-link">{name}</Link>
+  const slug = findAthleteSlug(name)
+  if (slug) return <Link to={`/athlete/${slug}`} className="perf-athlete-link">{name}</Link>
   return <span>{name}</span>
 }
 

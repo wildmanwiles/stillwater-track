@@ -66,7 +66,7 @@ export default function Roster() {
 
       <div className="roster-list">
         {filtered.map(athlete => (
-          <Link key={athlete.id} to={`/athlete/${athlete.id}`} className="roster-row">
+          <Link key={athlete.id} to={`/athlete/${athlete.first.toLowerCase()}-${athlete.last.toLowerCase()}`} className="roster-row">
             <div className="roster-name">
               {athlete.last}, {athlete.first}
             </div>
