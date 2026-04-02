@@ -4,6 +4,7 @@ import speedBoard from '../data/speedBoard.json'
 import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
 import { isSchoolRecord } from '../utils/recordCheck'
+import '../components/SchoolRecordBanner.css'
 import './Performance.css'
 
 const MEDALS = ['🥇', '🥈', '🥉']
@@ -98,22 +99,30 @@ function EventRankings({ event, results, gender, label }) {
 
   return (
     <div className="perf-event-section">
-      {sorted.map((r, i) => (
-        <div key={`${r.athlete}-${i}`} className="perf-result-row">
-          <span className="perf-rank">
-            {i < 3 ? MEDALS[i] : <span className="perf-rank-num">{i + 1}</span>}
-          </span>
-          <div className="perf-result-info">
-            <AthleteLink name={r.athlete} />
-            <span className="perf-result-grade">{r.grade}th</span>
+      {sorted.map((r, i) => {
+        const sr = isSchoolRecord(r.event, r.mark, r.gender, r.grade)
+        return (
+          <div key={`${r.athlete}-${i}`}>
+            {sr && (
+              <div className="sr-banner">
+                <p className="sr-banner-title">&#9733; NEW SCHOOL RECORD &#9733;</p>
+                <p className="sr-banner-detail">{r.athlete} &mdash; {r.event} &mdash; {r.mark}</p>
+              </div>
+            )}
+            <div className="perf-result-row">
+              <span className="perf-rank">
+                {i < 3 ? MEDALS[i] : <span className="perf-rank-num">{i + 1}</span>}
+              </span>
+              <div className="perf-result-info">
+                <AthleteLink name={r.athlete} />
+                <span className="perf-result-grade">{r.grade}th</span>
+              </div>
+              <span className="perf-result-mark">{r.mark}</span>
+              <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
+            </div>
           </div>
-          <span className="perf-result-mark">
-            {r.mark}
-            {isSchoolRecord(r.event, r.mark, r.gender, r.grade) && <span className="sr-badge" title="School Record">SR</span>}
-          </span>
-          <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
@@ -174,25 +183,33 @@ function RelayEventCard({ event, relays }) {
       <div className="perf-gender-block">
         <h4 className="perf-gender-label">{label}</h4>
         <div className="perf-event-section">
-          {sorted.map((r, i) => (
-            <div key={i} className="perf-result-row">
-              <span className="perf-rank">
-                {i < 3 ? MEDALS[i] : <span className="perf-rank-num">{i + 1}</span>}
-              </span>
-              <div className="perf-result-info perf-relay-info">
-                <span className="perf-result-mark">
-                  {r.mark}
-                  {isSchoolRecord(r.event, r.mark, r.gender, getRelayGrade(r.athletes)) && <span className="sr-badge" title="School Record">SR</span>}
-                </span>
-                <div className="perf-relay-athletes">
-                  {r.athletes.map((name, j) => (
-                    <span key={j}><AthleteLink name={name} />{j < r.athletes.length - 1 ? ', ' : ''}</span>
-                  ))}
+          {sorted.map((r, i) => {
+            const sr = isSchoolRecord(r.event, r.mark, r.gender, getRelayGrade(r.athletes))
+            return (
+              <div key={i}>
+                {sr && (
+                  <div className="sr-banner">
+                    <p className="sr-banner-title">&#9733; NEW SCHOOL RECORD &#9733;</p>
+                    <p className="sr-banner-detail">{r.event} &mdash; {r.mark}</p>
+                  </div>
+                )}
+                <div className="perf-result-row">
+                  <span className="perf-rank">
+                    {i < 3 ? MEDALS[i] : <span className="perf-rank-num">{i + 1}</span>}
+                  </span>
+                  <div className="perf-result-info perf-relay-info">
+                    <span className="perf-result-mark">{r.mark}</span>
+                    <div className="perf-relay-athletes">
+                      {r.athletes.map((name, j) => (
+                        <span key={j}><AthleteLink name={name} />{j < r.athletes.length - 1 ? ', ' : ''}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
                 </div>
               </div>
-              <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     )

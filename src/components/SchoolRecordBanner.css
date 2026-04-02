@@ -1,0 +1,73 @@
+/* School Record Banner — shared across all pages */
+.sr-banner {
+  background: linear-gradient(135deg, #B8860B 0%, #DAA520 50%, #B8860B 100%);
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  border: 2px solid #997300;
+  position: relative;
+  overflow: hidden;
+}
+
+.sr-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: sr-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes sr-shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.sr-banner-title {
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.sr-banner-detail {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin: 0.2rem 0 0;
+  line-height: 1.3;
+}
+
+/* "SCHOOL RECORD HOLDER" label for PRs on athlete profile */
+.sr-holder-label {
+  display: inline-block;
+  background: linear-gradient(135deg, #B8860B, #DAA520);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-left: 0.4rem;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .sr-banner {
+    padding: 0.6rem 0.85rem;
+  }
+  .sr-banner-title {
+    font-size: 0.78rem;
+  }
+  .sr-banner-detail {
+    font-size: 0.75rem;
+  }
+}

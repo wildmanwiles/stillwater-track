@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
 import { isSchoolRecord } from '../utils/recordCheck'
+import '../components/SchoolRecordBanner.css'
 import './MeetResults.css'
 
 function findAthleteSlug(name) {
@@ -28,19 +29,27 @@ function PlaceBadge({ place }) {
 }
 
 function ResultRow({ r }) {
+  const sr = isSchoolRecord(r.event, r.mark, r.gender, r.grade)
   return (
-    <div className="result-row">
-      <div className="result-place"><PlaceBadge place={r.place} /></div>
-      <div className="result-info">
-        <AthleteLink name={r.athlete} />
-        <span className="result-grade">{r.grade}th</span>
+    <>
+      {sr && (
+        <div className="sr-banner">
+          <p className="sr-banner-title">&#9733; NEW SCHOOL RECORD &#9733;</p>
+          <p className="sr-banner-detail">{r.athlete} &mdash; {r.event} &mdash; {r.mark}</p>
+        </div>
+      )}
+      <div className="result-row">
+        <div className="result-place"><PlaceBadge place={r.place} /></div>
+        <div className="result-info">
+          <AthleteLink name={r.athlete} />
+          <span className="result-grade">{r.grade}th</span>
+        </div>
+        <div className="result-mark">
+          {r.mark}
+          {r.pr && <span className="sb-badge" title="Season Best 2026">SB</span>}
+        </div>
       </div>
-      <div className="result-mark">
-        {r.mark}
-        {r.pr && <span className="sb-badge" title="Season Best 2026">SB</span>}
-        {isSchoolRecord(r.event, r.mark, r.gender, r.grade) && <span className="sr-badge" title="School Record">SR</span>}
-      </div>
-    </div>
+    </>
   )
 }
 
@@ -56,22 +65,28 @@ function getRelayGrade(athleteNames) {
 
 function RelayRow({ r }) {
   const grade = getRelayGrade(r.athletes)
+  const sr = isSchoolRecord(r.event, r.mark, r.gender, grade)
   return (
-    <div className="result-row relay-row">
-      <div className="result-place"><PlaceBadge place={r.place} /></div>
-      <div className="result-info">
-        <span className="relay-event-name">{r.event}</span>
-        <div className="relay-athletes">
-          {r.athletes.map((name, i) => (
-            <span key={i}><AthleteLink name={name} />{i < r.athletes.length - 1 ? ', ' : ''}</span>
-          ))}
+    <>
+      {sr && (
+        <div className="sr-banner">
+          <p className="sr-banner-title">&#9733; NEW SCHOOL RECORD &#9733;</p>
+          <p className="sr-banner-detail">{r.event} &mdash; {r.mark}</p>
         </div>
+      )}
+      <div className="result-row relay-row">
+        <div className="result-place"><PlaceBadge place={r.place} /></div>
+        <div className="result-info">
+          <span className="relay-event-name">{r.event}</span>
+          <div className="relay-athletes">
+            {r.athletes.map((name, i) => (
+              <span key={i}><AthleteLink name={name} />{i < r.athletes.length - 1 ? ', ' : ''}</span>
+            ))}
+          </div>
+        </div>
+        <div className="result-mark">{r.mark}</div>
       </div>
-      <div className="result-mark">
-        {r.mark}
-        {isSchoolRecord(r.event, r.mark, r.gender, grade) && <span className="sr-badge" title="School Record">SR</span>}
-      </div>
-    </div>
+    </>
   )
 }
 
