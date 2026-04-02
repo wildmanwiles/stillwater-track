@@ -37,3 +37,18 @@
   color: var(--navy);
   margin-bottom: 1.25rem;
 }
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1.5rem 1rem 2rem;
+  }
+  .page-title {
+    font-size: 1.5rem;
+  }
+  .page-subtitle {
+    font-size: 0.9rem;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+}

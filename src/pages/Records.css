@@ -106,18 +106,20 @@
   opacity: 0.6;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .records-grid {
     grid-template-columns: 1fr;
+    padding: 0 1rem;
   }
-}
-
-@media (max-width: 480px) {
   .records-table {
     font-size: 0.82rem;
   }
   .records-table th,
   .records-table td {
     padding: 0.5rem 0.6rem;
+  }
+  .records .year-cell,
+  .records-table th:last-child {
+    display: none;
   }
 }

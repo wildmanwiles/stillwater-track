@@ -30,6 +30,7 @@
   padding: 0.5rem 0.6rem;
   background: var(--navy);
   color: var(--white);
+  flex-shrink: 0;
 }
 
 .schedule-card.completed .schedule-date-block {
@@ -53,6 +54,7 @@
 
 .schedule-info {
   flex: 1;
+  min-width: 0;
 }
 
 .schedule-info h3 {
@@ -73,6 +75,7 @@
   border-radius: 20px;
   white-space: nowrap;
   letter-spacing: 0.02em;
+  flex-shrink: 0;
 }
 
 .status-pill.upcoming {
@@ -85,13 +88,22 @@
   color: var(--navy-dark);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .schedule-card {
-    flex-wrap: wrap;
     gap: 0.75rem;
     padding: 1rem;
   }
+  .schedule-date-block {
+    min-width: 48px;
+  }
+  .schedule-info h3 {
+    font-size: 0.95rem;
+  }
+  .schedule-location {
+    font-size: 0.82rem;
+  }
   .status-pill {
-    margin-left: auto;
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
   }
 }
