@@ -241,12 +241,25 @@ export default function AthleteProfile() {
                   </div>
                 ))}
                 {relays.map((r, i) => (
-                  <div key={`relay-${i}`} className="profile-result-row">
-                    <span className="profile-result-event">{r.event}</span>
-                    <span className="profile-result-mark">{r.mark}</span>
-                    <span className="profile-result-place">
-                      {r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`}
-                    </span>
+                  <div key={`relay-${i}`} className="profile-relay-block">
+                    <div className="profile-result-row">
+                      <span className="profile-result-event">{r.event}</span>
+                      <span className="profile-result-mark">{r.mark}</span>
+                      <span className="profile-result-place">
+                        {r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`}
+                      </span>
+                    </div>
+                    <div className="profile-relay-athletes">
+                      {r.athletes.map((name, j) => (
+                        <span key={j}>
+                          {name === fullName
+                            ? <strong className="relay-self">{name}</strong>
+                            : <span className="relay-teammate">{name}</span>
+                          }
+                          {j < r.athletes.length - 1 && ', '}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
