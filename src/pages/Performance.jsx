@@ -148,55 +148,64 @@ function EventSection({ event, results }) {
   )
 }
 
-function RelaySection({ relays }) {
-  const boysRelays = relays.filter(r => r.gender === 'M')
-  const girlsRelays = relays.filter(r => r.gender === 'F')
+function RelayEventCard({ event, relays }) {
+  const boysResults = relays.filter(r => r.event === event && r.gender === 'M')
+  const girlsResults = relays.filter(r => r.event === event && r.gender === 'F')
 
-  const renderRelayGroup = (items, label) => {
+  const renderGenderBlock = (items, label) => {
     if (items.length === 0) return null
-    const byEvent = {}
-    items.forEach(r => {
-      if (!byEvent[r.event]) byEvent[r.event] = []
-      byEvent[r.event].push(r)
-    })
+    const sorted = [...items].sort((a, b) => parseTime(a.mark) - parseTime(b.mark))
 
     return (
       <div className="perf-gender-block">
         <h4 className="perf-gender-label">{label}</h4>
-        {Object.entries(byEvent).map(([event, entries]) => (
-          <div key={event} className="perf-relay-event">
-            <h5 className="perf-relay-event-name">{event}</h5>
-            {entries.map((r, i) => (
-              <div key={i} className="perf-result-row relay-result-row">
-                <span className="perf-rank">
-                  {r.place <= 3 ? MEDALS[r.place - 1] : <span className="perf-rank-num">{r.place}</span>}
-                </span>
-                <div className="perf-result-info perf-relay-info">
-                  <span className="perf-result-mark">{r.mark}</span>
-                  <div className="perf-relay-athletes">
-                    {r.athletes.map((name, j) => (
-                      <span key={j}><AthleteLink name={name} />{j < r.athletes.length - 1 ? ', ' : ''}</span>
-                    ))}
-                  </div>
+        <div className="perf-event-section">
+          {sorted.map((r, i) => (
+            <div key={i} className="perf-result-row">
+              <span className="perf-rank">
+                {i < 3 ? MEDALS[i] : <span className="perf-rank-num">{i + 1}</span>}
+              </span>
+              <div className="perf-result-info perf-relay-info">
+                <span className="perf-result-mark">{r.mark}</span>
+                <div className="perf-relay-athletes">
+                  {r.athletes.map((name, j) => (
+                    <span key={j}><AthleteLink name={name} />{j < r.athletes.length - 1 ? ', ' : ''}</span>
+                  ))}
                 </div>
-                <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
               </div>
-            ))}
-          </div>
-        ))}
+              <Link to={`/results/${r.meetId}`} className="perf-result-meet">{r.meetName}</Link>
+            </div>
+          ))}
+        </div>
       </div>
     )
   }
 
-  if (boysRelays.length === 0 && girlsRelays.length === 0) {
+  return (
+    <div className="perf-event-card">
+      <h3 className="perf-event-title">{event}</h3>
+      {renderGenderBlock(boysResults, 'Boys')}
+      {renderGenderBlock(girlsResults, 'Girls')}
+    </div>
+  )
+}
+
+function RelaySection({ relays }) {
+  if (relays.length === 0) {
     return <p className="perf-no-results">No relay results recorded yet this season</p>
   }
 
+  const eventOrder = []
+  relays.forEach(r => {
+    if (!eventOrder.includes(r.event)) eventOrder.push(r.event)
+  })
+
   return (
-    <div className="perf-event-card">
-      {renderRelayGroup(boysRelays, 'Boys')}
-      {renderRelayGroup(girlsRelays, 'Girls')}
-    </div>
+    <>
+      {eventOrder.map(event => (
+        <RelayEventCard key={event} event={event} relays={relays} />
+      ))}
+    </>
   )
 }
 
