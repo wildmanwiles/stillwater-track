@@ -1,0 +1,123 @@
+.records .page-header {
+  text-align: center;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.records-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.records-section-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+  padding: 0.85rem 1.25rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.records-table-wrap {
+  overflow-x: auto;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.records-table th {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-600);
+  font-weight: 700;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-100);
+}
+
+.records-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.records-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.records-table tbody tr:hover {
+  background: var(--navy-bg);
+}
+
+.event-cell {
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.mark-cell {
+  color: var(--gray-500, #999);
+  font-style: italic;
+  font-size: 0.82rem;
+}
+
+.mark-cell.has-record {
+  color: var(--navy);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.88rem;
+}
+
+.records .athlete-cell {
+  color: var(--gray-500, #999);
+}
+
+.records .year-cell {
+  color: var(--gray-500, #999);
+}
+
+.records-note {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.records .pending .mark-cell {
+  opacity: 0.6;
+}
+
+@media (max-width: 800px) {
+  .records-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .records-table {
+    font-size: 0.82rem;
+  }
+  .records-table th,
+  .records-table td {
+    padding: 0.5rem 0.6rem;
+  }
+}

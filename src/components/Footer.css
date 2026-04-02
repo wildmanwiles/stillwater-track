@@ -1,0 +1,18 @@
+.footer {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 1.75rem 1.5rem;
+  margin-top: auto;
+}
+
+.footer-brand {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.2rem;
+}
+
+.footer-sub {
+  font-size: 0.8rem;
+}

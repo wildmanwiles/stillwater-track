@@ -1,0 +1,6 @@
+[
+  {"id":1,"name":"Ice Breaker Relays","date":"2026-03-28","location":"Spokane, WA","status":"completed"},
+  {"id":2,"name":"Lumberjack Meet","date":"2026-04-18","location":"Saint Marys, ID","status":"upcoming"},
+  {"id":3,"name":"Stillwater Meet","date":"2026-04-25","location":"Bigfork, MT","status":"upcoming"},
+  {"id":4,"name":"State Meet","date":"2026-05-09","location":"Belgrade, MT","status":"upcoming"}
+]

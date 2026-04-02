@@ -1,0 +1,125 @@
+.speed-board .page-title {
+  letter-spacing: -0.02em;
+}
+
+.leader-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.leader-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.leader-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background: var(--navy);
+  padding: 0.85rem 1.25rem;
+  margin: 0;
+}
+
+.leader-table-wrap {
+  overflow-x: auto;
+}
+
+.leader-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.leader-table th {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-600);
+  font-weight: 700;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-100);
+}
+
+.leader-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.leader-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.leader-table tbody tr:hover {
+  background: var(--navy-bg);
+}
+
+.col-rank {
+  width: 48px;
+  text-align: center !important;
+}
+
+.col-num {
+  text-align: right !important;
+}
+
+.medal {
+  font-size: 1.2rem;
+}
+
+.rank-num {
+  font-weight: 700;
+  color: var(--gray-600);
+}
+
+.athlete-cell {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.mph-cell {
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.fly-cell {
+  font-weight: 600;
+  color: var(--gray-600);
+  font-variant-numeric: tabular-nums;
+}
+
+.top-1 {
+  background: var(--gold-pale);
+}
+
+.top-2 {
+  background: #f6f6f6;
+}
+
+.top-3 {
+  background: #fdf5ef;
+}
+
+@media (max-width: 800px) {
+  .leader-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .leader-table {
+    font-size: 0.82rem;
+  }
+  .leader-table th,
+  .leader-table td {
+    padding: 0.5rem 0.6rem;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "males": [
+    {"name":"Caleb Territo","grade":11,"mph":21.2,"bestFly":1.054},
+    {"name":"Wyatt Steele","grade":10,"mph":19.5,"bestFly":1.145},
+    {"name":"Cohen Hill","grade":8,"mph":18.8,"bestFly":1.193},
+    {"name":"Bryson Wolf","grade":11,"mph":18.7,"bestFly":1.194},
+    {"name":"Jay Erickson","grade":10,"mph":18.6,"bestFly":1.203},
+    {"name":"Truett Warren","grade":12,"mph":18.4,"bestFly":1.219},
+    {"name":"Payton Jones","grade":11,"mph":18.3,"bestFly":1.223},
+    {"name":"Vincent DalleTezze","grade":11,"mph":18.2,"bestFly":1.230},
+    {"name":"Isaac Blasdel","grade":10,"mph":17.8,"bestFly":1.257},
+    {"name":"John Schaefer","grade":9,"mph":17.5,"bestFly":1.276},
+    {"name":"Elliot Schmautz","grade":8,"mph":17.5,"bestFly":1.280},
+    {"name":"Forest Gordon","grade":10,"mph":16.8,"bestFly":1.330},
+    {"name":"James Schaefer","grade":7,"mph":12.9,"bestFly":1.736}
+  ],
+  "females": [
+    {"name":"Arden Dartez","grade":8,"mph":17.0,"bestFly":1.318},
+    {"name":"Jasper Bailey","grade":10,"mph":17.1,"bestFly":1.150},
+    {"name":"Averie Brown","grade":8,"mph":16.7,"bestFly":1.339},
+    {"name":"Jolie Anderson","grade":12,"mph":16.3,"bestFly":1.370},
+    {"name":"Whitney Brown","grade":8,"mph":16.2,"bestFly":1.381},
+    {"name":"Cassie Henderson","grade":11,"mph":16.1,"bestFly":1.391},
+    {"name":"Scarlyt Hollman","grade":7,"mph":15.3,"bestFly":1.463},
+    {"name":"Lucy Margenau","grade":7,"mph":15.3,"bestFly":1.465},
+    {"name":"Florence Rickel","grade":9,"mph":14.7,"bestFly":1.523},
+    {"name":"Kendra Wolf","grade":10,"mph":14.2,"bestFly":1.579},
+    {"name":"Meka Cannon","grade":8,"mph":14.1,"bestFly":1.588}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "boys": [
+    {"event":"100m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"200m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"400m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"800m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"1600m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"3200m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"110m Hurdles","mark":"Record Pending","athlete":"","year":null},
+    {"event":"300m Hurdles","mark":"Record Pending","athlete":"","year":null},
+    {"event":"High Jump","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Long Jump","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Triple Jump","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Shot Put","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Discus","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Javelin","mark":"Record Pending","athlete":"","year":null},
+    {"event":"4x100m Relay","mark":"Record Pending","athlete":"","year":null},
+    {"event":"4x200m Relay","mark":"Record Pending","athlete":"","year":null},
+    {"event":"4x400m Relay","mark":"Record Pending","athlete":"","year":null},
+    {"event":"4x800m Relay","mark":"Record Pending","athlete":"","year":null}
+  ],
+  "girls": [
+    {"event":"100m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"200m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"400m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"800m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"1600m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"3200m","mark":"Record Pending","athlete":"","year":null},
+    {"event":"100m Hurdles","mark":"Record Pending","athlete":"","year":null},
+    {"event":"300m Hurdles","mark":"Record Pending","athlete":"","year":null},
+    {"event":"High Jump","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Long Jump","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Triple Jump","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Shot Put","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Discus","mark":"Record Pending","athlete":"","year":null},
+    {"event":"Javelin","mark":"Record Pending","athlete":"","year":null},
+    {"event":"4x100m Relay","mark":"Record Pending","athlete":"","year":null},
+    {"event":"4x200m Relay","mark":"Record Pending","athlete":"","year":null},
+    {"event":"4x400m Relay","mark":"Record Pending","athlete":"","year":null},
+    {"event":"4x800m Relay","mark":"Record Pending","athlete":"","year":null}
+  ]
+}

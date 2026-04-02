@@ -1,0 +1,97 @@
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.schedule-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s;
+}
+
+.schedule-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.schedule-date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 54px;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.schedule-card.completed .schedule-date-block {
+  background: var(--gold);
+  color: var(--navy-dark);
+}
+
+.sched-month {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.sched-day {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.schedule-info {
+  flex: 1;
+}
+
+.schedule-info h3 {
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.15rem;
+}
+
+.schedule-location {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+}
+
+.status-pill {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.status-pill.upcoming {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.status-pill.completed {
+  background: var(--gold);
+  color: var(--navy-dark);
+}
+
+@media (max-width: 600px) {
+  .schedule-card {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .status-pill {
+    margin-left: auto;
+  }
+}

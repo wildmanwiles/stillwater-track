@@ -1,0 +1,196 @@
+.perf-tabs {
+  display: flex;
+  gap: 0.25rem;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.perf-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.perf-tab:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.perf-tab.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+.perf-tab-icon {
+  font-size: 1rem;
+}
+
+.perf-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.perf-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.perf-empty-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.perf-empty h3 {
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.perf-empty-desc {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.perf-empty-msg {
+  color: var(--gray-500, #999);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* Reuse leader styles from SpeedBoard */
+.performance .leader-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.performance .leader-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.performance .leader-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background: var(--navy);
+  padding: 0.85rem 1.25rem;
+  margin: 0;
+}
+
+.performance .leader-table-wrap {
+  overflow-x: auto;
+}
+
+.performance .leader-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.performance .leader-table th {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-600);
+  font-weight: 700;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-100);
+}
+
+.performance .leader-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.performance .leader-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.performance .leader-table tbody tr:hover {
+  background: var(--navy-bg);
+}
+
+.performance .col-rank {
+  width: 48px;
+  text-align: center !important;
+}
+
+.performance .col-num {
+  text-align: right !important;
+}
+
+.performance .medal {
+  font-size: 1.2rem;
+}
+
+.performance .rank-num {
+  font-weight: 700;
+  color: var(--gray-600);
+}
+
+.performance .athlete-cell {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.performance .mph-cell {
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.performance .top-1 {
+  background: var(--gold-pale);
+}
+
+.performance .top-2 {
+  background: #f6f6f6;
+}
+
+.performance .top-3 {
+  background: #fdf5ef;
+}
+
+@media (max-width: 800px) {
+  .performance .leader-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .perf-tabs {
+    padding: 0 1rem;
+  }
+  .perf-tab {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
