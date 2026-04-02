@@ -34,6 +34,8 @@ export default function Schedule() {
                 <Link to={`/results/${meet.id}`} className="results-btn">View Results</Link>
               ) : meet.status === 'completed' ? (
                 <span className="results-pending">Results Coming Soon</span>
+              ) : meet.status === 'cancelled' ? (
+                <span className="status-pill cancelled">Cancelled</span>
               ) : (
                 <span className={`status-pill ${meet.status}`}>Upcoming</span>
               )}

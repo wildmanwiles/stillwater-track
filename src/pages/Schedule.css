@@ -88,6 +88,28 @@
   color: var(--navy-dark);
 }
 
+.schedule-card.cancelled {
+  opacity: 0.6;
+}
+
+.schedule-card.cancelled .schedule-date-block {
+  background: var(--gray-400, #aaa);
+}
+
+.schedule-card.cancelled .schedule-info h3 {
+  text-decoration: line-through;
+  color: var(--gray-500, #999);
+}
+
+.schedule-card.cancelled .schedule-location {
+  color: var(--gray-400, #aaa);
+}
+
+.status-pill.cancelled {
+  background: #dc2626;
+  color: var(--white);
+}
+
 .schedule-actions {
   flex-shrink: 0;
 }
