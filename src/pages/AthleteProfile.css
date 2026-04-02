@@ -1,0 +1,244 @@
+.athlete-profile .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  min-height: 44px;
+}
+
+.athlete-profile .back-link:hover {
+  color: var(--gold);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.profile-meta {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.profile-grade {
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  border-radius: 12px;
+}
+
+.profile-gender {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  border-radius: 12px;
+}
+
+.profile-gender.boys {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.profile-gender.girls {
+  background: #8b5cf6;
+  color: var(--white);
+}
+
+.profile-role {
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0.75rem;
+  border-radius: 12px;
+}
+
+.profile-primary {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.profile-section {
+  margin-bottom: 2rem;
+}
+
+.profile-section-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.profile-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.profile-event-tag {
+  background: var(--navy-bg);
+  color: var(--navy-light, var(--navy));
+  font-size: 0.85rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.pr-list {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.pr-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1.25rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.pr-row:last-child {
+  border-bottom: none;
+}
+
+.pr-row:hover {
+  background: var(--navy-bg);
+}
+
+.pr-event {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.92rem;
+}
+
+.pr-mark {
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.profile-meet {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.75rem;
+}
+
+.profile-meet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: var(--gray-100);
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.profile-meet-name {
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.profile-meet-name:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.profile-meet-date {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+.profile-results-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-result-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.25rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.profile-result-row:last-child {
+  border-bottom: none;
+}
+
+.profile-result-event {
+  flex: 1;
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 0.9rem;
+}
+
+.profile-result-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--navy);
+}
+
+.profile-result-place {
+  width: 36px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-600);
+}
+
+.profile-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gray-500, #999);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  .pr-row {
+    padding: 0.55rem 1rem;
+  }
+  .profile-result-row {
+    padding: 0.5rem 0.85rem;
+    gap: 0.5rem;
+  }
+  .profile-meet-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    padding: 0.65rem 0.85rem;
+  }
+}

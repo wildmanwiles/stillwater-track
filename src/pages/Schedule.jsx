@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom'
 import schedule from '../data/schedule.json'
+import meetResults from '../data/meetResults.json'
 import './Schedule.css'
 
 export default function Schedule() {
   const sorted = [...schedule].sort((a, b) => new Date(a.date) - new Date(b.date))
+  const meetIds = new Set(meetResults.map(m => m.meetId))
 
   return (
     <div className="page schedule">
@@ -26,9 +29,15 @@ export default function Schedule() {
               <h3>{meet.name}</h3>
               <p className="schedule-location">{meet.location}</p>
             </div>
-            <span className={`status-pill ${meet.status}`}>
-              {meet.status === 'completed' ? 'Completed' : 'Upcoming'}
-            </span>
+            <div className="schedule-actions">
+              {meet.status === 'completed' && meetIds.has(meet.id) ? (
+                <Link to={`/results/${meet.id}`} className="results-btn">View Results</Link>
+              ) : meet.status === 'completed' ? (
+                <span className="results-pending">Results Coming Soon</span>
+              ) : (
+                <span className={`status-pill ${meet.status}`}>Upcoming</span>
+              )}
+            </div>
           </div>
         ))}
       </div>

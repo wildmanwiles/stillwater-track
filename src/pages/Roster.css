@@ -78,10 +78,14 @@
   box-shadow: var(--shadow-sm);
   flex-wrap: wrap;
   transition: box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .roster-row:hover {
   box-shadow: var(--shadow);
+  background: var(--navy-bg);
 }
 
 .roster-name {

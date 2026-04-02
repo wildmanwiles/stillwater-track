@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import athletes from '../data/athletes.json'
 import './Roster.css'
 
@@ -64,12 +65,12 @@ export default function Roster() {
 
       <div className="roster-list">
         {filtered.map(athlete => (
-          <div key={athlete.id} className="roster-row">
+          <Link key={athlete.id} to={`/athlete/${athlete.id}`} className="roster-row">
             <div className="roster-name">
               {athlete.last}, {athlete.first}
             </div>
             <span className="grade-badge">
-              {athlete.grade >= 9 ? `${athlete.grade}th` : `${athlete.grade}th`}
+              {athlete.grade}th
             </span>
             {athlete.role === 'manager' ? (
               <span className="manager-badge">Manager</span>
@@ -82,7 +83,7 @@ export default function Roster() {
                 </div>
               )
             )}
-          </div>
+          </Link>
         ))}
       </div>
     </div>

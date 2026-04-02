@@ -88,6 +88,38 @@
   color: var(--navy-dark);
 }
 
+.schedule-actions {
+  flex-shrink: 0;
+}
+
+.results-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  min-height: 44px;
+  line-height: 2.2;
+  transition: all 0.2s;
+}
+
+.results-btn:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.results-pending {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-500, #999);
+  font-style: italic;
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
   .schedule-card {
     gap: 0.75rem;
