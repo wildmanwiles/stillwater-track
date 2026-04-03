@@ -205,7 +205,9 @@
             {"name":"Helayna Iwen","grade":11,"gender":"F","splits":[6.463,6.352,6.569,6.486,null],"best":6.352,"mph":14.08},
             {"name":"Arwynn Steele","grade":12,"gender":"F","splits":[5.132,5.127,5.263,5.308,5.243],"best":5.127,"mph":17.45},
             {"name":"Jolie Anderson","grade":12,"gender":"F","splits":[5.725,5.746,5.712,5.737,5.597],"best":5.597,"mph":15.99},
+            {"name":"Lucy Margenau","grade":7,"gender":"F","splits":[5.851,6.033,6.129,6.138,5.995],"best":5.851,"mph":15.29},
             {"name":"Kendra Wolf","grade":10,"gender":"F","splits":[6.9,6.437,null,null,null],"best":6.437,"mph":13.90},
+            {"name":"Lydia Jones","grade":8,"gender":"F","splits":[6.974,null,null,null,null],"best":6.974,"mph":12.83},
             {"name":"Cohen Hill","grade":8,"gender":"M","splits":[4.851,4.852,4.786,4.903,4.987],"best":4.786,"mph":18.70},
             {"name":"Elliot Schmautz","grade":8,"gender":"M","splits":[5.285,5.288,5.224,5.261,5.198],"best":5.198,"mph":17.21},
             {"name":"John Schaefer","grade":9,"gender":"M","splits":[5.344,5.402,5.504,5.566,5.597],"best":5.344,"mph":16.74},
@@ -216,7 +218,8 @@
             {"name":"Vincent DalleTezze","grade":11,"gender":"M","splits":[4.935,4.924,4.932,5.011,4.96],"best":4.924,"mph":18.17},
             {"name":"Payton Jones","grade":11,"gender":"M","splits":[4.911,4.912,4.893,null,null],"best":4.893,"mph":18.29},
             {"name":"Matthew VanSwearingen","grade":11,"gender":"M","splits":[5.367,5.298,5.26,5.329,5.39],"best":5.26,"mph":17.01},
-            {"name":"Bryson Wolf","grade":11,"gender":"M","splits":[4.86,4.947,4.802,4.922,5.044],"best":4.802,"mph":18.63}
+            {"name":"Bryson Wolf","grade":11,"gender":"M","splits":[4.86,4.947,4.802,4.922,5.044],"best":4.802,"mph":18.63},
+            {"name":"James Schaefer","grade":7,"gender":"M","splits":[7.223,7.421,7.148,7.248,7.436],"best":7.148,"mph":12.52}
           ]
         }
       ]
