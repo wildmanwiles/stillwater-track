@@ -131,7 +131,6 @@ function getSummaryHeaders(workout) {
   if ('best' in sample || 'best100' in sample || 'best200' in sample) cols.push('Best')
   if ('avg' in sample) cols.push('Avg')
   cols.push('MPH')
-  if ('predicted400' in sample) cols.push('Pred 400')
   return cols
 }
 
@@ -143,7 +142,6 @@ function getSummaryValues(a, workout) {
   if ('avg' in a) vals.push(a.avg != null ? (Number.isInteger(a.avg) ? a.avg : a.avg.toFixed(3)) : '—')
   const mph = getAthleteMph(a, workout.type)
   vals.push(mph != null ? mph.toFixed(1) : '—')
-  if ('predicted400' in a) vals.push(a.predicted400 || '—')
   return vals
 }
 
