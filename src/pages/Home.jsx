@@ -44,6 +44,14 @@ export default function Home() {
           <span className="quick-icon">⚡</span>
           <span className="quick-label">Results</span>
         </Link>
+        <Link to="/gallery" className="quick-card">
+          <span className="quick-icon">📸</span>
+          <span className="quick-label">Gallery</span>
+        </Link>
+        <Link to="/practice" className="quick-card">
+          <span className="quick-icon">🏃</span>
+          <span className="quick-label">Practice</span>
+        </Link>
         <Link to="/records" className="quick-card">
           <span className="quick-icon">🏆</span>
           <span className="quick-label">Records</span>
