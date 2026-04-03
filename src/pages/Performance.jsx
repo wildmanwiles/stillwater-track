@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import speedBoard from '../data/speedBoard.json'
 import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
 import { isSchoolRecord } from '../utils/recordCheck'
@@ -16,7 +15,6 @@ const TABS = [
   { id: 'hurdles', label: 'Hurdles', icon: '🚧', events: ['110m Hurdles', '100m Hurdles', '300m Hurdles'] },
   { id: 'distance', label: 'Distance', icon: '🏅', events: ['800m', '1500m', '3200m'] },
   { id: 'relays', label: 'Relays', icon: '🏃‍♂️', events: [] },
-  { id: 'speed-board', label: 'Speed Board', icon: '⚡', events: [] },
 ]
 
 const TIME_EVENTS = new Set(['100m', '200m', '400m', '800m', '1500m', '3200m', '110m Hurdles', '100m Hurdles', '300m Hurdles'])
@@ -243,45 +241,7 @@ function RelaySection({ relays }) {
   )
 }
 
-function LeaderTable({ title, entries }) {
-  const sorted = [...entries].sort((a, b) => b.mph - a.mph)
-
-  return (
-    <div className="leader-section">
-      <h2 className="leader-title">{title}</h2>
-      <div className="leader-table-wrap">
-        <table className="leader-table">
-          <thead>
-            <tr>
-              <th className="col-rank">#</th>
-              <th>Athlete</th>
-              <th>Grade</th>
-              <th className="col-num">MPH</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sorted.map((entry, i) => (
-              <tr key={entry.name} className={i < 3 ? `top-${i + 1}` : ''}>
-                <td className="col-rank">
-                  {i < 3 ? (
-                    <span className="medal">{MEDALS[i]}</span>
-                  ) : (
-                    <span className="rank-num">{i + 1}</span>
-                  )}
-                </td>
-                <td className="athlete-cell">{entry.name}</td>
-                <td>{entry.grade}</td>
-                <td className="col-num mph-cell">{entry.mph.toFixed(1)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  )
-}
-
-export default function Performance() {
+export default function Results() {
   const [activeTab, setActiveTab] = useState('sprints')
   const current = TABS.find(t => t.id === activeTab)
 
@@ -291,8 +251,8 @@ export default function Performance() {
   return (
     <div className="page performance">
       <div className="page-header">
-        <h1 className="page-title">⚡ Performance</h1>
-        <p className="page-subtitle">Track &amp; Field Results</p>
+        <h1 className="page-title">Results</h1>
+        <p className="page-subtitle">2026 Season Meet Results</p>
       </div>
 
       <div className="perf-tabs">
@@ -309,19 +269,14 @@ export default function Performance() {
       </div>
 
       <div className="perf-content">
-        {activeTab === 'speed-board' ? (
-          <div className="leader-grid">
-            <LeaderTable title="Boys" entries={speedBoard.males} />
-            <LeaderTable title="Girls" entries={speedBoard.females} />
-          </div>
-        ) : activeTab === 'relays' ? (
+        {activeTab === 'relays' ? (
           <>
-            <p className="perf-season-note">2026 Season Best Performances — updated after each meet</p>
+            <p className="perf-season-note">Season best performances — updated after each meet</p>
             <RelaySection relays={relayResults} />
           </>
         ) : (
           <>
-            <p className="perf-season-note">2026 Season Best Performances — updated after each meet</p>
+            <p className="perf-season-note">Season best performances — updated after each meet</p>
             {current.events.map(event => (
               <EventSection key={event} event={event} results={seasonBests} />
             ))}

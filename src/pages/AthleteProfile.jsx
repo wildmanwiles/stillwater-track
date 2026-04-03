@@ -3,6 +3,7 @@ import { useState } from 'react'
 import athletes from '../data/athletes.json'
 import meetResults from '../data/meetResults.json'
 import { isSchoolRecord } from '../utils/recordCheck'
+import AthletePhoto from '../components/AthletePhoto'
 import '../components/SchoolRecordBanner.css'
 import './AthleteProfile.css'
 
@@ -164,6 +165,7 @@ export default function AthleteProfile() {
       <Link to="/roster" className="back-link">&larr; Back to Roster</Link>
 
       <div className="profile-header">
+        <AthletePhoto slug={slug} size="large" />
         <h1 className="profile-name">{athlete.first} {athlete.last}</h1>
         <div className="profile-meta">
           <span className="profile-grade">{athlete.grade}th Grade</span>

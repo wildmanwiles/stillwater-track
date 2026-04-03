@@ -26,7 +26,9 @@ export default function Navbar() {
         <li><NavLink to="/" onClick={close}>Home</NavLink></li>
         <li><NavLink to="/roster" onClick={close}>Roster</NavLink></li>
         <li><NavLink to="/schedule" onClick={close}>Schedule</NavLink></li>
-        <li><NavLink to="/performance" onClick={close}>Performance</NavLink></li>
+        <li><NavLink to="/results" onClick={close}>Results</NavLink></li>
+        <li><NavLink to="/gallery" onClick={close}>Gallery</NavLink></li>
+        <li><NavLink to="/practice" onClick={close}>Practice</NavLink></li>
         <li><NavLink to="/records" onClick={close}>Records</NavLink></li>
       </ul>
     </nav>

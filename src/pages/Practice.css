@@ -1,0 +1,147 @@
+.practice .leader-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.practice .leader-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.practice .leader-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background: var(--navy);
+  padding: 0.85rem 1.25rem;
+  margin: 0;
+}
+
+.practice .leader-table-wrap {
+  overflow-x: auto;
+}
+
+.practice .leader-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.practice .leader-table th {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-600);
+  font-weight: 700;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-100);
+}
+
+.practice .leader-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.practice .leader-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.practice .leader-table tbody tr:hover {
+  background: var(--navy-bg);
+}
+
+.practice .col-rank {
+  width: 48px;
+  text-align: center !important;
+}
+
+.practice .col-num {
+  text-align: right !important;
+}
+
+.practice .medal {
+  font-size: 1.2rem;
+}
+
+.practice .rank-num {
+  font-weight: 700;
+  color: var(--gray-600);
+}
+
+.practice .athlete-cell {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.practice .mph-cell {
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.practice .top-1 {
+  background: var(--gold-pale);
+}
+
+.practice .top-2 {
+  background: #f6f6f6;
+}
+
+.practice .top-3 {
+  background: #fdf5ef;
+}
+
+.practice-placeholder {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.practice-placeholder-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.practice-placeholder p {
+  color: var(--gray-500, #999);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .practice .leader-grid {
+    grid-template-columns: 1fr;
+  }
+  .practice .leader-table {
+    font-size: 0.85rem;
+  }
+  .practice .leader-table th {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.7rem;
+  }
+  .practice .leader-table td {
+    padding: 0.5rem 0.6rem;
+  }
+  .practice .col-rank {
+    width: 40px;
+  }
+  .practice .mph-cell {
+    font-size: 1rem;
+  }
+  .practice-placeholder {
+    padding: 2.5rem 1.25rem;
+  }
+}

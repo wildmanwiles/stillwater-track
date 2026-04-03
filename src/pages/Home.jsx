@@ -40,9 +40,9 @@ export default function Home() {
           <span className="quick-icon">📅</span>
           <span className="quick-label">Schedule</span>
         </Link>
-        <Link to="/performance" className="quick-card">
+        <Link to="/results" className="quick-card">
           <span className="quick-icon">⚡</span>
-          <span className="quick-label">Performance</span>
+          <span className="quick-label">Results</span>
         </Link>
         <Link to="/records" className="quick-card">
           <span className="quick-icon">🏆</span>

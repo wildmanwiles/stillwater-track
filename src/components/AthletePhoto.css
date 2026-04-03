@@ -1,0 +1,39 @@
+.athlete-photo {
+  border-radius: 50%;
+  background: #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.athlete-photo.small {
+  width: 42px;
+  height: 42px;
+}
+
+.athlete-photo.large {
+  width: 90px;
+  height: 90px;
+}
+
+.athlete-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.athlete-photo-placeholder {
+  color: #9CA3AF;
+}
+
+.athlete-photo.small .athlete-photo-placeholder {
+  width: 22px;
+  height: 22px;
+}
+
+.athlete-photo.large .athlete-photo-placeholder {
+  width: 44px;
+  height: 44px;
+}

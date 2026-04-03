@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import athletes from '../data/athletes.json'
+import AthletePhoto from '../components/AthletePhoto'
 import './Roster.css'
 
 const GRADES = [7, 8, 9, 10, 11, 12]
@@ -67,6 +68,7 @@ export default function Roster() {
       <div className="roster-list">
         {filtered.map(athlete => (
           <Link key={athlete.id} to={`/athlete/${athlete.first.toLowerCase()}-${athlete.last.toLowerCase()}`} className="roster-row">
+            <AthletePhoto slug={`${athlete.first}-${athlete.last}`.toLowerCase()} size="small" />
             <div className="roster-name">
               {athlete.last}, {athlete.first}
             </div>
