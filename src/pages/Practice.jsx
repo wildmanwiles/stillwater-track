@@ -17,6 +17,7 @@ const WORKOUT_DISTANCES = {
   '25M to 10M Fly': 10,
   '20M Competitive Fly': 20,
   '200x3 / 600M Predictor': 200,
+  '5x40M Fly': 40,
 }
 
 const SOURCE_LABELS = {
@@ -26,6 +27,7 @@ const SOURCE_LABELS = {
   '25M to 10M Fly': '25M Fly',
   '20M Competitive Fly': '20M Fly',
   '200x3 / 600M Predictor': '200M',
+  '5x40M Fly': '40M Fly',
 }
 
 function getBestTime(a) {
@@ -46,7 +48,18 @@ function getAthleteMph(a, workoutType) {
 }
 
 function computeSpeedBoard() {
+  // Find the most recent session date across all workouts
+  let latestDate = ''
+  for (const workout of practiceData.workouts) {
+    for (const session of workout.sessions) {
+      if (session.date > latestDate) latestDate = session.date
+    }
+  }
+
+  // Build best MPH for each athlete, tracking source date
   const athleteMap = {}
+  // Also build best MPH excluding the latest date for PB detection
+  const prevMap = {}
 
   for (const workout of practiceData.workouts) {
     for (const session of workout.sessions) {
@@ -54,6 +67,7 @@ function computeSpeedBoard() {
         const mph = getAthleteMph(a, workout.type)
         if (mph == null) continue
         const key = a.name
+
         if (!athleteMap[key] || mph > athleteMap[key].mph) {
           athleteMap[key] = {
             name: a.name,
@@ -61,13 +75,25 @@ function computeSpeedBoard() {
             gender: a.gender,
             mph,
             source: workout.type,
+            date: session.date,
+          }
+        }
+
+        if (session.date !== latestDate) {
+          if (!prevMap[key] || mph > prevMap[key]) {
+            prevMap[key] = mph
           }
         }
       }
     }
   }
 
-  const all = Object.values(athleteMap)
+  // Mark NEW PB if best came from latest session and beats previous best
+  const all = Object.values(athleteMap).map(entry => ({
+    ...entry,
+    isNewPb: entry.date === latestDate && (!prevMap[entry.name] || entry.mph > prevMap[entry.name]),
+  }))
+
   return {
     males: all.filter(a => a.gender === 'M'),
     females: all.filter(a => a.gender === 'F'),
@@ -105,7 +131,7 @@ function LeaderTable({ title, entries }) {
                 <td className="athlete-cell">{entry.name}</td>
                 <td>{entry.grade}</td>
                 <td className="col-num mph-cell">
-                  <span>{entry.mph.toFixed(1)}</span>
+                  <span>{entry.mph.toFixed(1)}{entry.isNewPb && <span className="new-pb-badge">NEW PB</span>}</span>
                   <span className="speed-source">{SOURCE_LABELS[entry.source] || entry.source}</span>
                 </td>
               </tr>
