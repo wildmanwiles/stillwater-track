@@ -85,6 +85,16 @@
   color: var(--gold);
   font-size: 1.15rem;
   font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.speed-source {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--gray-500, #999);
+  letter-spacing: 0.02em;
+  margin-top: 0.1rem;
 }
 
 .practice .top-1 {
@@ -263,11 +273,6 @@
   font-weight: 700;
   color: var(--navy);
   min-width: 55px;
-}
-
-.workout-table .best-cell {
-  color: var(--gold);
-  font-weight: 800;
 }
 
 .workout-table .top-1 {
