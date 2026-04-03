@@ -1,8 +1,27 @@
+import { useState } from 'react'
+import galleryData from '../data/gallery.json'
 import './Gallery.css'
 
-const PLACEHOLDER_COUNT = 12
-
 export default function Gallery() {
+  const [lightbox, setLightbox] = useState(null)
+
+  function openLightbox(meetIdx, photoIdx) {
+    setLightbox({ meetIdx, photoIdx })
+  }
+
+  function closeLightbox() {
+    setLightbox(null)
+  }
+
+  function navigate(dir) {
+    if (!lightbox) return
+    const meet = galleryData[lightbox.meetIdx]
+    const next = lightbox.photoIdx + dir
+    if (next >= 0 && next < meet.photos.length) {
+      setLightbox({ ...lightbox, photoIdx: next })
+    }
+  }
+
   return (
     <div className="page gallery">
       <div className="page-header">
@@ -10,22 +29,49 @@ export default function Gallery() {
         <p className="page-subtitle">Photos from the 2026 Season</p>
       </div>
 
-      <div className="gallery-meet-section">
-        <h2 className="gallery-meet-title">Ice Breaker Relays &mdash; March 28, 2026</h2>
-        <div className="gallery-grid">
-          {Array.from({ length: PLACEHOLDER_COUNT }, (_, i) => (
-            <div key={i} className="gallery-placeholder">
-              <svg className="gallery-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <path d="M21 15l-5-5L5 21" />
-              </svg>
-            </div>
-          ))}
+      {galleryData.map((meet, mi) => (
+        <div key={meet.id} className="gallery-meet-section">
+          <h2 className="gallery-meet-title">{meet.name} &mdash; {meet.date}</h2>
+          <div className="gallery-grid">
+            {meet.photos.map((photo, pi) => (
+              <button
+                key={photo}
+                className="gallery-thumb"
+                onClick={() => openLightbox(mi, pi)}
+                aria-label={`View photo ${pi + 1}`}
+              >
+                <img
+                  src={`${meet.photoFolder}${photo}`}
+                  alt={`${meet.name} photo ${pi + 1}`}
+                  loading="lazy"
+                />
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
 
-      <p className="gallery-note">Photos coming soon! Check back after each meet.</p>
+      {lightbox && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">&times;</button>
+            {lightbox.photoIdx > 0 && (
+              <button className="lightbox-nav lightbox-prev" onClick={() => navigate(-1)} aria-label="Previous">&lsaquo;</button>
+            )}
+            <img
+              src={`${galleryData[lightbox.meetIdx].photoFolder}${galleryData[lightbox.meetIdx].photos[lightbox.photoIdx]}`}
+              alt={`Photo ${lightbox.photoIdx + 1}`}
+              className="lightbox-img"
+            />
+            {lightbox.photoIdx < galleryData[lightbox.meetIdx].photos.length - 1 && (
+              <button className="lightbox-nav lightbox-next" onClick={() => navigate(1)} aria-label="Next">&rsaquo;</button>
+            )}
+            <div className="lightbox-counter">
+              {lightbox.photoIdx + 1} / {galleryData[lightbox.meetIdx].photos.length}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
