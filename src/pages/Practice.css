@@ -99,6 +99,189 @@
   background: #fdf5ef;
 }
 
+/* Workout Sub-Tabs */
+.workout-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.workout-tab {
+  padding: 0.35rem 0.85rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.workout-tab:hover {
+  border-color: var(--navy);
+  background: var(--navy-bg);
+}
+
+.workout-tab.active {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+/* Workout Info */
+.workout-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 0.65rem 1rem;
+  background: var(--gray-100);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--gold);
+}
+
+.workout-desc {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+.workout-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Workout Section */
+.workout-section {
+  margin-bottom: 1.5rem;
+}
+
+.workout-gender-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background: var(--navy);
+  padding: 0.7rem 1.25rem;
+  margin: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.workout-table-wrap {
+  overflow-x: auto;
+  background: var(--white);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.workout-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.workout-table th {
+  padding: 0.55rem 0.6rem;
+  text-align: center;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray-600);
+  font-weight: 700;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-100);
+  white-space: nowrap;
+}
+
+.workout-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.workout-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.workout-table tbody tr:hover {
+  background: var(--navy-bg);
+}
+
+.workout-table .col-rank {
+  width: 40px;
+  text-align: center;
+}
+
+.workout-table .col-name {
+  text-align: left;
+  min-width: 130px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.workout-table .col-grade {
+  width: 36px;
+}
+
+.grade-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.1rem 0.45rem;
+  border-radius: 10px;
+  min-width: 22px;
+  text-align: center;
+}
+
+.workout-table .col-time {
+  color: var(--navy);
+  font-weight: 500;
+  min-width: 48px;
+}
+
+.workout-table .col-time.dnf {
+  color: var(--gray-400, #bbb);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.workout-table .col-summary {
+  font-weight: 700;
+  color: var(--navy);
+  min-width: 55px;
+}
+
+.workout-table .best-cell {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.workout-table .top-1 {
+  background: var(--gold-pale);
+}
+
+.workout-table .top-2 {
+  background: #f6f6f6;
+}
+
+.workout-table .top-3 {
+  background: #fdf5ef;
+}
+
 .practice-placeholder {
   text-align: center;
   padding: 4rem 2rem;
@@ -143,5 +326,26 @@
   }
   .practice-placeholder {
     padding: 2.5rem 1.25rem;
+  }
+  .workout-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .workout-table {
+    font-size: 0.75rem;
+  }
+  .workout-table th {
+    padding: 0.4rem 0.4rem;
+    font-size: 0.65rem;
+  }
+  .workout-table td {
+    padding: 0.4rem 0.4rem;
+  }
+  .workout-table .col-name {
+    min-width: 100px;
+  }
+  .workout-table .col-time {
+    min-width: 38px;
   }
 }

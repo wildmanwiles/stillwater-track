@@ -1,0 +1,193 @@
+{
+  "workouts": [
+    {
+      "type": "10x40M",
+      "description": "10 x 40 meter sprints, timed individually, with predicted 400M time",
+      "sessions": [
+        {
+          "date": "2026-03-11",
+          "athletes": [
+            {"name":"Jasper Bailey","grade":10,"gender":"F","splits":[5.97,5.71,5.88,5.79,5.97,6.00,5.90,5.97,5.84,5.88],"avgMph":15.87,"best":5.71,"predicted400":"0:58.91"},
+            {"name":"Averie Brown","grade":8,"gender":"F","splits":[6.19,6.31,6.06,6.75,6.40,6.32,6.15,6.32,6.28,6.38],"avgMph":14.80,"best":6.06,"predicted400":"1:03.16"},
+            {"name":"Arden Dartez","grade":8,"gender":"F","splits":[6.34,6.44,6.38,6.21,6.34,6.16,6.29,6.34,6.40,6.62],"avgMph":14.72,"best":6.16,"predicted400":"1:03.52"},
+            {"name":"Finley Dean","grade":11,"gender":"F","splits":[6.25,6.38,6.28,6.41,6.31,6.44,6.47,6.28,6.28,6.56],"avgMph":14.68,"best":6.25,"predicted400":"1:03.66"},
+            {"name":"Arwynn Steele","grade":12,"gender":"F","splits":[6.59,6.38,6.47,6.41,6.43,6.59,6.25,6.38,6.38,6.53],"avgMph":14.51,"best":6.25,"predicted400":"1:04.41"},
+            {"name":"Bella Arneson","grade":8,"gender":"F","splits":[6.53,6.60,6.43,6.59,6.56,6.53,6.47,6.53,6.41,6.44],"avgMph":14.36,"best":6.41,"predicted400":"1:05.09"},
+            {"name":"Whitney Brown","grade":8,"gender":"F","splits":[6.62,6.44,6.53,6.63,6.66,6.44,6.46,6.56,6.65,6.44],"avgMph":14.29,"best":6.44,"predicted400":"1:05.43"},
+            {"name":"Jolie Anderson","grade":12,"gender":"F","splits":[7.06,6.78,6.94,6.78,6.57,6.88,6.75,6.75,6.75,6.85],"avgMph":13.72,"best":6.57,"predicted400":"1:08.11"},
+            {"name":"Cassie Henderson","grade":11,"gender":"F","splits":[6.50,6.47,6.75,6.84,6.72,6.84,7.06,7.32,7.00,6.87],"avgMph":13.67,"best":6.47,"predicted400":"1:08.37"},
+            {"name":"Florence Rickel","grade":9,"gender":"F","splits":[6.78,7.00,7.09,7.00,6.97,6.97,7.04,7.03,7.00,7.03],"avgMph":13.37,"best":6.78,"predicted400":"1:09.91"},
+            {"name":"Meka Cannon","grade":8,"gender":"F","splits":[7.19,7.25,6.48,7.10,7.16,7.12,7.22,7.13,7.16,7.22],"avgMph":13.16,"best":6.48,"predicted400":"1:11.03"},
+            {"name":"Helayna Iwen","grade":11,"gender":"F","splits":[7.37,7.44,7.34,7.47,7.40,7.40,7.56,7.15,7.40,7.66],"avgMph":12.60,"best":7.15,"predicted400":"1:14.19"},
+            {"name":"Truett Warren","grade":12,"gender":"M","splits":[5.56,5.55,5.56,5.81,5.75,5.56,5.50,5.69,5.53,5.60],"avgMph":16.66,"best":5.50,"predicted400":"0:56.11"},
+            {"name":"Wyatt Steele","grade":10,"gender":"M","splits":[5.66,5.56,5.72,5.88,5.60,5.75,5.60,5.66,5.75,5.69],"avgMph":16.44,"best":5.56,"predicted400":"0:56.87"},
+            {"name":"Vincent DalleTezze","grade":11,"gender":"M","splits":[5.87,5.91,5.65,5.75,5.60,5.90,5.90,5.84,6.00,5.62],"avgMph":16.11,"best":5.60,"predicted400":"0:58.04"},
+            {"name":"Bryson Wolf","grade":11,"gender":"M","splits":[5.75,5.81,6.03,5.44,5.81,5.82,5.90,5.84,5.91,5.81],"avgMph":16.08,"best":5.44,"predicted400":"0:58.12"},
+            {"name":"Cohen Hill","grade":8,"gender":"M","splits":[5.69,5.62,5.85,5.90,5.87,5.84,5.90,5.95,5.97,5.69],"avgMph":16.04,"best":5.62,"predicted400":"0:58.28"},
+            {"name":"Jay Erickson","grade":10,"gender":"M","splits":[5.66,5.65,5.90,5.90,5.97,6.09,5.81,5.90,5.68,5.79],"avgMph":16.02,"best":5.65,"predicted400":"0:58.35"},
+            {"name":"Payton Jones","grade":11,"gender":"M","splits":[5.62,5.75,6.00,5.85,5.93,5.81,5.90,5.97,6.00,5.90],"avgMph":15.92,"best":5.62,"predicted400":"0:58.73"},
+            {"name":"Elliot Schmautz","grade":8,"gender":"M","splits":[5.69,5.70,6.22,6.12,6.10,5.87,6.22,6.12,null,null],"avgMph":15.53,"best":5.69,"predicted400":"1:00.18"},
+            {"name":"Isaac Blasdel","grade":10,"gender":"M","splits":[5.97,5.90,6.22,6.19,6.16,6.09,6.13,6.16,6.25,6.00],"avgMph":15.31,"best":5.90,"predicted400":"1:01.07"},
+            {"name":"Forest Gordon","grade":10,"gender":"M","splits":[5.94,6.03,6.25,6.35,6.19,6.06,6.06,6.18,6.25,6.13],"avgMph":15.21,"best":5.94,"predicted400":"1:01.44"},
+            {"name":"Matthew VanSwearingen","grade":11,"gender":"M","splits":[6.12,6.12,6.38,6.25,6.35,6.44,6.15,6.15,6.31,6.50],"avgMph":14.89,"best":6.12,"predicted400":"1:02.77"}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "5x100M",
+      "description": "5 x 100m flys, ran in pairs, timed with OVR, walk back rest ~2.5 min. Told to run each like the back-stretch of 400. Predicted 400 = sum x 0.93",
+      "sessions": [
+        {
+          "date": "2026-03-18",
+          "athletes": [
+            {"name":"Averie Brown","grade":8,"gender":"F","splits":[15.5,15.6,15.6,16.0,16.2],"best100":15.5,"predicted400":"1:13.38"},
+            {"name":"Whitney Brown","grade":8,"gender":"F","splits":[15.5,15.6,15.9,16.2,16.1],"best100":15.5,"predicted400":"1:13.75"},
+            {"name":"Meka Cannon","grade":8,"gender":"F","splits":[18.0,18.1,18.9,18.5,18.9],"best100":18.0,"predicted400":"1:25.93"},
+            {"name":"Arden Dartez","grade":8,"gender":"F","splits":[15.6,15.7,15.9,16.4,16.7],"best100":15.6,"predicted400":"1:14.68"},
+            {"name":"Cohen Hill","grade":8,"gender":"M","splits":[13.7,13.8,14.1,14.2,14.4],"best100":13.7,"predicted400":"1:05.29"},
+            {"name":"Florence Rickel","grade":9,"gender":"F","splits":[16.3,16.7,null,null,null],"best100":16.3,"predicted400":null},
+            {"name":"John Schaefer","grade":9,"gender":"M","splits":[14.5,14.5,15.0,14.8,15.3],"best100":14.5,"predicted400":"1:08.91"},
+            {"name":"Jasper Bailey","grade":10,"gender":"F","splits":[14.4,14.9,15.3,15.8,16.1],"best100":14.4,"predicted400":"1:11.15"},
+            {"name":"Isaac Blasdel","grade":10,"gender":"M","splits":[13.7,13.9,14.1,14.3,15.2],"best100":13.7,"predicted400":"1:06.22"},
+            {"name":"Jay Erickson","grade":10,"gender":"M","splits":[13.3,13.5,13.8,14.1,14.3],"best100":13.3,"predicted400":"1:04.17"},
+            {"name":"Forest Gordon","grade":10,"gender":"M","splits":[14.4,14.7,15.2,16.4,15.7],"best100":14.4,"predicted400":"1:11.05"},
+            {"name":"Wyatt Steele","grade":10,"gender":"M","splits":[13.2,13.3,13.4,13.5,14.0],"best100":13.2,"predicted400":"1:02.68"},
+            {"name":"Vincent DalleTezze","grade":11,"gender":"M","splits":[14.3,14.5,15.0,15.0,15.3],"best100":14.3,"predicted400":"1:08.91"},
+            {"name":"Finley Dean","grade":11,"gender":"F","splits":[15.9,15.3,15.8,16.4,16.5],"best100":15.3,"predicted400":"1:14.31"},
+            {"name":"Cassie Henderson","grade":11,"gender":"F","splits":[16.2,16.9,null,null,null],"best100":16.2,"predicted400":null},
+            {"name":"Helayna Iwen","grade":11,"gender":"F","splits":[17.7,18.2,19.0,19.9,20.1],"best100":17.7,"predicted400":"1:28.26"},
+            {"name":"Payton Jones","grade":11,"gender":"M","splits":[14.3,13.7,14.1,14.3,14.6],"best100":13.7,"predicted400":"1:06.03"},
+            {"name":"Matthew VanSwearingen","grade":11,"gender":"M","splits":[14.4,14.9,15.4,15.7,16.2],"best100":14.4,"predicted400":"1:11.24"},
+            {"name":"Bryson Wolf","grade":11,"gender":"M","splits":[13.7,13.8,13.9,14.1,14.1],"best100":13.7,"predicted400":"1:04.73"},
+            {"name":"Caleb Territo","grade":11,"gender":"M","splits":[13.0,13.3,13.5,13.6,13.7],"best100":13.0,"predicted400":"1:02.31"},
+            {"name":"Jolie Anderson","grade":12,"gender":"F","splits":[16.0,16.5,17.1,17.6,18.0],"best100":16.0,"predicted400":null},
+            {"name":"Truett Warren","grade":12,"gender":"M","splits":[13.0,13.3,13.5,13.5,13.8],"best100":13.0,"predicted400":"1:02.31"}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "10M Fly",
+      "description": "10m fly with 25m run-in. 4 athletes racing, 4 coaches on stopwatch. Times are unofficial hand-timed.",
+      "sessions": [
+        {
+          "date": "2026-03-09",
+          "athletes": [
+            {"name":"Jasper Bailey","grade":10,"gender":"F","flies":[1.15,1.32,1.30],"avg":1.26,"mph":17.80,"best":1.15},
+            {"name":"Finley Dean","grade":11,"gender":"F","flies":[1.56,1.15,1.35],"avg":1.35,"mph":16.53,"best":1.15},
+            {"name":"Emily Bucher","grade":8,"gender":"F","flies":[1.46,1.28,1.34],"avg":1.36,"mph":16.45,"best":1.28},
+            {"name":"Arwynn Steele","grade":12,"gender":"F","flies":[1.25,1.53,1.38],"avg":1.39,"mph":16.13,"best":1.25},
+            {"name":"Arden Dartez","grade":8,"gender":"F","flies":[1.37,1.40,1.47],"avg":1.41,"mph":15.83,"best":1.37},
+            {"name":"Averie Brown","grade":8,"gender":"F","flies":[1.41,1.40,1.47],"avg":1.43,"mph":15.68,"best":1.40},
+            {"name":"Whitney Brown","grade":8,"gender":"F","flies":[1.47,1.41,1.44],"avg":1.44,"mph":15.53,"best":1.41},
+            {"name":"Bella Arneson","grade":8,"gender":"F","flies":[1.41,1.53,1.48],"avg":1.47,"mph":15.18,"best":1.41},
+            {"name":"Cassie Henderson","grade":11,"gender":"F","flies":[1.50,1.50,1.45],"avg":1.48,"mph":15.08,"best":1.45},
+            {"name":"Florence Rickel","grade":9,"gender":"F","flies":[1.68,1.47,1.34],"avg":1.50,"mph":14.95,"best":1.34},
+            {"name":"Jolie Anderson","grade":12,"gender":"F","flies":[1.44,1.47,1.59],"avg":1.50,"mph":14.91,"best":1.44},
+            {"name":"Meka Cannon","grade":8,"gender":"F","flies":[1.68,1.47,1.47],"avg":1.54,"mph":14.53,"best":1.47},
+            {"name":"Helayna Iwen","grade":11,"gender":"F","flies":[1.61,1.60,1.50],"avg":1.57,"mph":14.25,"best":1.50},
+            {"name":"Lucy Margenau","grade":7,"gender":"F","flies":[1.56,1.66,1.84],"avg":1.69,"mph":13.26,"best":1.56},
+            {"name":"Aspen Broker","grade":8,"gender":"F","flies":[1.78,1.66,1.66],"avg":1.70,"mph":13.16,"best":1.66},
+            {"name":"Lydia Jones","grade":8,"gender":"F","flies":[1.66,1.84,1.90],"avg":1.80,"mph":12.43,"best":1.66},
+            {"name":"Truett Warren","grade":12,"gender":"M","flies":[1.04,1.28,1.28],"avg":1.20,"mph":18.64,"best":1.04},
+            {"name":"Bryson Wolf","grade":11,"gender":"M","flies":[1.16,1.38,1.25],"avg":1.26,"mph":17.71,"best":1.16},
+            {"name":"Wyatt Steele","grade":10,"gender":"M","flies":[1.10,1.38,1.35],"avg":1.28,"mph":17.52,"best":1.10},
+            {"name":"Elliot Schmautz","grade":8,"gender":"M","flies":[1.45,1.23,1.23],"avg":1.30,"mph":17.16,"best":1.23},
+            {"name":"Vincent DalleTezze","grade":11,"gender":"M","flies":[1.32,1.34,1.25],"avg":1.30,"mph":17.16,"best":1.25},
+            {"name":"Cohen Hill","grade":8,"gender":"M","flies":[1.33,1.40,1.21],"avg":1.31,"mph":17.03,"best":1.21},
+            {"name":"Payton Jones","grade":11,"gender":"M","flies":[1.35,1.43,1.22],"avg":1.33,"mph":16.78,"best":1.22},
+            {"name":"Jay Erickson","grade":10,"gender":"M","flies":[1.32,1.39,1.30],"avg":1.34,"mph":16.74,"best":1.30},
+            {"name":"Isaac Blasdel","grade":10,"gender":"M","flies":[1.47,1.28,1.30],"avg":1.35,"mph":16.57,"best":1.28},
+            {"name":"Matthew VanSwearingen","grade":11,"gender":"M","flies":[1.40,1.49,1.21],"avg":1.37,"mph":16.37,"best":1.21},
+            {"name":"Forest Gordon","grade":10,"gender":"M","flies":[1.56,1.46,1.22],"avg":1.41,"mph":15.83,"best":1.22},
+            {"name":"James Schaefer","grade":7,"gender":"M","flies":[1.56,1.66,1.84],"avg":1.69,"mph":13.26,"best":1.56}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "25M to 10M Fly",
+      "description": "25m run-in to 10m timed fly. Ranked by top speed.",
+      "sessions": [
+        {
+          "date": "2026-03-31",
+          "athletes": [
+            {"name":"Arden Dartez","grade":8,"gender":"F","flies":[1.33,1.318,1.331],"best":1.318,"avg":1.326,"mph":17.0},
+            {"name":"Averie Brown","grade":8,"gender":"F","flies":[1.41,1.339,1.348],"best":1.339,"avg":1.366,"mph":16.7},
+            {"name":"Jolie Anderson","grade":12,"gender":"F","flies":[1.389,1.424,1.37],"best":1.37,"avg":1.394,"mph":16.3},
+            {"name":"Whitney Brown","grade":8,"gender":"F","flies":[1.405,1.381,1.413],"best":1.381,"avg":1.40,"mph":16.2},
+            {"name":"Cassie Henderson","grade":11,"gender":"F","flies":[1.391,1.423,1.459],"best":1.391,"avg":1.424,"mph":16.1},
+            {"name":"Scarlyt Hollman","grade":7,"gender":"F","flies":[1.483,1.463,1.47],"best":1.463,"avg":1.472,"mph":15.3},
+            {"name":"Lucy Margenau","grade":7,"gender":"F","flies":[1.483,1.465,1.53],"best":1.465,"avg":1.493,"mph":15.3},
+            {"name":"Florence Rickel","grade":9,"gender":"F","flies":[null,1.523,1.93],"best":1.523,"avg":1.727,"mph":14.7},
+            {"name":"Kendra Wolf","grade":10,"gender":"F","flies":[1.579,null,null],"best":1.579,"avg":1.579,"mph":14.2},
+            {"name":"Meka Cannon","grade":8,"gender":"F","flies":[1.593,1.60,1.588],"best":1.588,"avg":1.594,"mph":14.1},
+            {"name":"Caleb Territo","grade":11,"gender":"M","flies":[null,1.054,1.06],"best":1.054,"avg":1.057,"mph":21.2},
+            {"name":"Wyatt Steele","grade":10,"gender":"M","flies":[1.17,1.145,1.17],"best":1.145,"avg":1.162,"mph":19.5},
+            {"name":"Cohen Hill","grade":8,"gender":"M","flies":[1.193,1.237,1.23],"best":1.193,"avg":1.22,"mph":18.8},
+            {"name":"Bryson Wolf","grade":11,"gender":"M","flies":[1.255,1.241,1.194],"best":1.194,"avg":1.23,"mph":18.7},
+            {"name":"Jay Erickson","grade":10,"gender":"M","flies":[1.21,1.203,1.21],"best":1.203,"avg":1.208,"mph":18.6},
+            {"name":"Truett Warren","grade":12,"gender":"M","flies":[1.265,1.244,1.22],"best":1.22,"avg":1.243,"mph":18.4},
+            {"name":"Payton Jones","grade":11,"gender":"M","flies":[1.243,1.223,1.23],"best":1.223,"avg":1.232,"mph":18.3},
+            {"name":"Vincent DalleTezze","grade":11,"gender":"M","flies":[1.254,1.256,1.23],"best":1.23,"avg":1.247,"mph":18.2},
+            {"name":"Isaac Blasdel","grade":10,"gender":"M","flies":[1.259,1.257,1.27],"best":1.257,"avg":1.262,"mph":17.8},
+            {"name":"John Schaefer","grade":9,"gender":"M","flies":[1.284,1.276,1.35],"best":1.276,"avg":1.303,"mph":17.5},
+            {"name":"Elliot Schmautz","grade":8,"gender":"M","flies":[1.32,1.28,1.305],"best":1.28,"avg":1.302,"mph":17.5},
+            {"name":"Forest Gordon","grade":10,"gender":"M","flies":[1.343,1.33,1.38],"best":1.33,"avg":1.351,"mph":16.8},
+            {"name":"James Schaefer","grade":7,"gender":"M","flies":[1.736,1.76,1.79],"best":1.736,"avg":1.762,"mph":12.9}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "20M Competitive Fly",
+      "description": "20m competitive fly, timed.",
+      "sessions": [
+        {
+          "date": "2026-03-25",
+          "athletes": [
+            {"name":"Meka Cannon","grade":8,"gender":"F","flies":[3.384,3.373,3.378],"avg":3.378,"mph":13.24,"best":3.373},
+            {"name":"Arden Dartez","grade":8,"gender":"F","flies":[2.943,null,null],"avg":2.943,"mph":15.20,"best":2.943},
+            {"name":"Cohen Hill","grade":8,"gender":"M","flies":[2.622,2.677,2.662],"avg":2.654,"mph":16.86,"best":2.622},
+            {"name":"William Ramsey","grade":9,"gender":"M","flies":[2.838,3.027,3.011],"avg":2.959,"mph":15.12,"best":2.838},
+            {"name":"John Schaefer","grade":9,"gender":"M","flies":[2.889,2.881,3.058],"avg":2.943,"mph":15.20,"best":2.881},
+            {"name":"Nathaniel Taturevych","grade":9,"gender":"M","flies":[2.677,2.745,null],"avg":2.711,"mph":16.50,"best":2.677},
+            {"name":"Jasper Bailey","grade":10,"gender":"F","flies":[2.611,2.607,2.638],"avg":2.619,"mph":17.08,"best":2.607},
+            {"name":"Isaac Blasdel","grade":10,"gender":"M","flies":[2.662,2.698,2.698],"avg":2.686,"mph":16.66,"best":2.662},
+            {"name":"Jay Erickson","grade":10,"gender":"M","flies":[2.674,2.683,2.753],"avg":2.703,"mph":16.55,"best":2.674},
+            {"name":"Liam Folkersen","grade":10,"gender":"M","flies":[2.746,2.741,null],"avg":2.744,"mph":16.31,"best":2.741},
+            {"name":"Wyatt Steele","grade":10,"gender":"M","flies":[2.547,2.588,2.617],"avg":2.584,"mph":17.31,"best":2.547},
+            {"name":"Kendra Wolf","grade":10,"gender":"F","flies":[3.054,3.094,3.062],"avg":3.070,"mph":14.57,"best":3.054},
+            {"name":"Payton Jones","grade":11,"gender":"M","flies":[2.646,2.788,2.709],"avg":2.714,"mph":16.48,"best":2.646},
+            {"name":"Caleb Territo","grade":11,"gender":"M","flies":[2.416,2.354,2.392],"avg":2.387,"mph":18.74,"best":2.354},
+            {"name":"Bryson Wolf","grade":11,"gender":"M","flies":[2.624,2.595,2.598],"avg":2.606,"mph":17.17,"best":2.595}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "200x3 / 600M Predictor",
+      "description": "3 x 200m with 3-4 min rest. Fly times with 10m run-in. Predictor = sum x 0.667 + 2 seconds.",
+      "sessions": [
+        {
+          "date": "2026-03-20",
+          "athletes": [
+            {"name":"Meka Cannon","grade":8,"gender":"F","flies":[36.4,39.1,40.3],"predicted400":"1:19.24","best200":36.4},
+            {"name":"Arden Dartez","grade":8,"gender":"F","flies":[30.7,33.2,35.6],"predicted400":"1:08.37","best200":30.7},
+            {"name":"Cohen Hill","grade":8,"gender":"M","flies":[26.5,28.7,31.3],"predicted400":"0:59.70","best200":26.5},
+            {"name":"Florence Rickel","grade":9,"gender":"F","flies":[33.4,null,null],"predicted400":null,"best200":33.4},
+            {"name":"John Schaefer","grade":9,"gender":"M","flies":[30.6,31.4,33.2],"predicted400":"1:05.50","best200":30.6},
+            {"name":"Jasper Bailey","grade":10,"gender":"F","flies":[28.5,31.9,null],"predicted400":null,"best200":28.5},
+            {"name":"Jay Erickson","grade":10,"gender":"M","flies":[26.1,28.5,30.4],"predicted400":"0:58.70","best200":26.1},
+            {"name":"Kendra Wolf","grade":10,"gender":"F","flies":[32.1,34.2,38.3],"predicted400":"1:11.77","best200":32.1},
+            {"name":"Cassie Henderson","grade":11,"gender":"F","flies":[33.2,35.8,41.7],"predicted400":"1:15.84","best200":33.2},
+            {"name":"Helayna Iwen","grade":11,"gender":"F","flies":[38.4,45.1,null],"predicted400":null,"best200":38.4},
+            {"name":"Payton Jones","grade":11,"gender":"M","flies":[27.5,28.6,null],"predicted400":null,"best200":27.5},
+            {"name":"Bryson Wolf","grade":11,"gender":"M","flies":[26.2,27.4,30.4],"predicted400":"0:58.03","best200":26.2}
+          ]
+        }
+      ]
+    }
+  ]
+}
