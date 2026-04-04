@@ -76,6 +76,7 @@
   color: var(--gray-600);
   text-decoration: none;
   transition: color 0.15s;
+  min-height: 44px;
 }
 
 .schedule-location-link:hover {
@@ -168,20 +169,34 @@
 
 @media (max-width: 768px) {
   .schedule-card {
-    gap: 0.75rem;
-    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
   }
   .schedule-date-block {
     min-width: 48px;
   }
+  .schedule-info {
+    flex: 1 1 0;
+    min-width: 0;
+  }
   .schedule-info h3 {
     font-size: 0.95rem;
   }
-  .schedule-location {
+  .schedule-location,
+  .schedule-location-link {
     font-size: 0.82rem;
   }
   .status-pill {
     font-size: 0.72rem;
     padding: 0.25rem 0.65rem;
+  }
+  .schedule-actions {
+    width: 100%;
+    padding-left: 60px;
+  }
+  .results-btn {
+    min-height: 40px;
+    line-height: 1.8;
   }
 }

@@ -181,23 +181,39 @@
 @media (max-width: 768px) {
   .result-row {
     padding: 0.6rem 0.85rem;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    flex-wrap: wrap;
   }
   .result-place {
-    width: 30px;
+    width: 28px;
+  }
+  .result-info {
+    flex: 1 1 0;
+    min-width: 0;
   }
   .result-athlete-link {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .result-mark {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
   .event-group-title {
     padding: 0.5rem 0.85rem;
     font-size: 0.78rem;
   }
+  .gender-title {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.85rem;
+  }
   .meet-note {
     font-size: 0.85rem;
     padding: 0.75rem 1rem;
+  }
+  .relay-athletes {
+    font-size: 0.78rem;
+    word-break: break-word;
   }
 }

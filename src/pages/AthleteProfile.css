@@ -538,6 +538,10 @@
 }
 
 @media (max-width: 768px) {
+  .athlete-profile .athlete-photo.large {
+    width: 80px;
+    height: 80px;
+  }
   .profile-name {
     font-size: 1.5rem;
   }

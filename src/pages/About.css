@@ -75,6 +75,7 @@
   font-weight: 700;
   text-decoration: none;
   transition: all 0.15s;
+  min-height: 44px;
 }
 
 .about-ext-link:hover {

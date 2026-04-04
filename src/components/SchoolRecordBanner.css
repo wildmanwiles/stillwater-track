@@ -63,11 +63,19 @@
 @media (max-width: 768px) {
   .sr-banner {
     padding: 0.6rem 0.85rem;
+    margin: 0.25rem 0.5rem;
   }
   .sr-banner-title {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    word-break: break-word;
   }
   .sr-banner-detail {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
+    word-break: break-word;
+  }
+  .sr-holder-label {
+    font-size: 0.55rem;
+    padding: 0.1rem 0.35rem;
   }
 }
