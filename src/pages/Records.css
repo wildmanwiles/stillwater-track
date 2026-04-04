@@ -4,7 +4,7 @@
 
 /* Record Watch */
 .record-watch {
-  max-width: 700px;
+  max-width: 750px;
   margin: 0 auto 2.5rem;
   padding: 0 1.5rem;
 }
@@ -16,7 +16,14 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.record-watch-subtitle {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gray-500, #999);
+  margin-bottom: 1.25rem;
 }
 
 .record-watch-empty {
@@ -27,57 +34,106 @@
   padding: 1.5rem 0;
 }
 
-.record-watch-list {
+/* Record Watch Group */
+.rw-group {
+  margin-bottom: 1.25rem;
+}
+
+.rw-group-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  background: var(--navy);
+  padding: 0.6rem 1.15rem;
+  margin: 0 0 0.5rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.rw-group-list {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0;
 }
 
-.record-watch-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 0.85rem 1.15rem;
-  box-shadow: var(--shadow-sm);
-  border-left: 4px solid #B8860B;
-}
-
-.record-watch-top {
+/* Record Watch Card */
+.rw-card {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  align-items: stretch;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
 }
 
-.record-watch-athlete {
+.rw-card:last-child {
+  border-bottom: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.rw-rank {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  width: 38px;
+  flex-shrink: 0;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--gray-500, #999);
+  background: var(--gray-50, #fafafa);
+  border-right: 1px solid var(--gray-200);
 }
 
-.record-watch-name {
-  font-weight: 700;
-  color: var(--navy);
-  text-decoration: none;
+.rw-card:first-child .rw-rank {
+  color: #B8860B;
   font-size: 0.95rem;
 }
 
-a.record-watch-name:hover {
+.rw-card-body {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  min-width: 0;
+}
+
+.rw-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.rw-card-athlete {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.rw-name {
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+a.rw-name:hover {
   color: #B8860B;
   text-decoration: underline;
 }
 
-.record-watch-event {
-  font-size: 0.78rem;
-  font-weight: 600;
+.rw-event-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
   color: var(--gray-600);
   background: var(--gray-100);
   padding: 0.1rem 0.5rem;
   border-radius: 10px;
+  white-space: nowrap;
 }
 
-.record-watch-diff {
+.rw-diff {
   font-size: 0.82rem;
   font-weight: 800;
   color: #B8860B;
@@ -85,32 +141,54 @@ a.record-watch-name:hover {
   flex-shrink: 0;
 }
 
-.record-watch-bar-wrap {
-  height: 6px;
-  background: var(--gray-200);
+.rw-bar-wrap {
+  height: 5px;
+  background: var(--navy-bg, #e8ecf4);
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.4rem;
 }
 
-.record-watch-bar {
+.rw-bar {
   height: 100%;
   background: linear-gradient(90deg, #B8860B, #DAA520);
   border-radius: 3px;
   transition: width 0.3s ease;
 }
 
-.record-watch-stats {
+.rw-stats {
   display: flex;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: 0.73rem;
   color: var(--gray-500, #999);
   gap: 0.5rem;
   flex-wrap: wrap;
 }
 
-.record-watch-stats strong {
+.rw-stats strong {
   color: var(--navy);
+}
+
+/* Show More */
+.rw-show-more {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--gray-200);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: var(--gray-50, #fafafa);
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+  text-align: center;
+}
+
+.rw-show-more:hover {
+  background: var(--navy-bg);
 }
 
 .records-division {
@@ -253,12 +331,19 @@ a.record-watch-name:hover {
   .record-watch {
     padding: 0 1rem;
   }
-  .record-watch-card {
-    padding: 0.75rem 0.85rem;
+  .rw-rank {
+    width: 30px;
+    font-size: 0.78rem;
   }
-  .record-watch-stats {
+  .rw-card-body {
+    padding: 0.55rem 0.75rem;
+  }
+  .rw-name {
+    font-size: 0.85rem;
+  }
+  .rw-stats {
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.1rem;
   }
   .records-division {
     padding: 0 1rem;

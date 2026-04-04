@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { isCoach } from '../utils/auth'
 import records from '../data/records.json'
@@ -120,6 +120,54 @@ function buildRecordWatch() {
   return close
 }
 
+function RecordWatchGroup({ title, entries }) {
+  const [expanded, setExpanded] = useState(false)
+  const INITIAL_SHOW = 5
+  const hasMore = entries.length > INITIAL_SHOW
+  const visible = expanded ? entries : entries.slice(0, INITIAL_SHOW)
+
+  return (
+    <div className="rw-group">
+      <h3 className="rw-group-title">{title}</h3>
+      <div className="rw-group-list">
+        {visible.map((c, i) => {
+          const slug = findAthleteSlug(c.athlete)
+          return (
+            <div key={`${c.athlete}-${c.event}`} className="rw-card">
+              <span className="rw-rank">{i + 1}</span>
+              <div className="rw-card-body">
+                <div className="rw-card-top">
+                  <div className="rw-card-athlete">
+                    {slug ? (
+                      <Link to={`/athlete/${slug}`} className="rw-name">{c.athlete}</Link>
+                    ) : (
+                      <span className="rw-name">{c.athlete}</span>
+                    )}
+                    <span className="rw-event-pill">{c.event}</span>
+                  </div>
+                  <span className="rw-diff">{c.diffText}</span>
+                </div>
+                <div className="rw-bar-wrap">
+                  <div className="rw-bar" style={{ width: `${Math.round(c.pct * 100)}%` }} />
+                </div>
+                <div className="rw-stats">
+                  <span>Season Best: <strong>{c.seasonBest}</strong></span>
+                  <span>Record: <strong>{c.record}</strong> ({c.recordHolder}, {c.recordYear || '—'})</span>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      {hasMore && (
+        <button className="rw-show-more" onClick={() => setExpanded(!expanded)}>
+          {expanded ? 'Show Less' : `Show ${entries.length - INITIAL_SHOW} More`}
+        </button>
+      )}
+    </div>
+  )
+}
+
 function RecordWatch() {
   const close = useMemo(() => buildRecordWatch(), [])
 
@@ -127,41 +175,32 @@ function RecordWatch() {
     return (
       <div className="record-watch">
         <h2 className="record-watch-title">Chasing Records</h2>
+        <p className="record-watch-subtitle">Current athletes within striking distance of a school record</p>
         <p className="record-watch-empty">No athletes currently within striking distance of a school record. Keep pushing!</p>
       </div>
     )
   }
 
+  // Group by division then gender
+  const groups = []
+  for (const div of ['HS', 'JH']) {
+    for (const gender of ['F', 'M']) {
+      const entries = close.filter(c => c.division === div && c.gender === gender)
+      if (entries.length > 0) {
+        const divLabel = div === 'HS' ? 'High School' : 'Jr. High'
+        const genderLabel = gender === 'F' ? 'Girls' : 'Boys'
+        groups.push({ key: `${div}-${gender}`, title: `${divLabel} ${genderLabel}`, entries })
+      }
+    }
+  }
+
   return (
     <div className="record-watch">
       <h2 className="record-watch-title">Chasing Records</h2>
-      <div className="record-watch-list">
-        {close.map((c, i) => {
-          const slug = findAthleteSlug(c.athlete)
-          return (
-            <div key={i} className="record-watch-card">
-              <div className="record-watch-top">
-                <div className="record-watch-athlete">
-                  {slug ? (
-                    <Link to={`/athlete/${slug}`} className="record-watch-name">{c.athlete}</Link>
-                  ) : (
-                    <span className="record-watch-name">{c.athlete}</span>
-                  )}
-                  <span className="record-watch-event">{c.event}</span>
-                </div>
-                <span className="record-watch-diff">{c.diffText}</span>
-              </div>
-              <div className="record-watch-bar-wrap">
-                <div className="record-watch-bar" style={{ width: `${Math.round(c.pct * 100)}%` }} />
-              </div>
-              <div className="record-watch-stats">
-                <span className="record-watch-sb">Season Best: <strong>{c.seasonBest}</strong></span>
-                <span className="record-watch-rec">Record: <strong>{c.record}</strong> ({c.recordHolder}, {c.recordYear || '—'})</span>
-              </div>
-            </div>
-          )
-        })}
-      </div>
+      <p className="record-watch-subtitle">Current athletes within striking distance of a school record</p>
+      {groups.map(g => (
+        <RecordWatchGroup key={g.key} title={g.title} entries={g.entries} />
+      ))}
     </div>
   )
 }
