@@ -7,7 +7,12 @@ export default function Footer() {
       <div className="footer-main">
         <div className="footer-col footer-school">
           <h3 className="footer-heading">Stillwater Christian School</h3>
-          <p className="footer-address">255 Stillwater Loop, Kalispell, MT 59901</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=255+FFA+Dr+Kalispell+MT+59901" target="_blank" rel="noopener noreferrer" className="footer-address-link">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+            </svg>
+            255 F.F.A. Dr, Kalispell, MT 59901
+          </a>
           <p className="footer-motto">Home of the Cougars</p>
         </div>
 
