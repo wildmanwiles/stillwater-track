@@ -2,6 +2,117 @@
   text-align: center;
 }
 
+/* Record Watch */
+.record-watch {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+}
+
+.record-watch-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #B8860B;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.record-watch-empty {
+  text-align: center;
+  color: var(--gray-500, #999);
+  font-style: italic;
+  font-size: 0.9rem;
+  padding: 1.5rem 0;
+}
+
+.record-watch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.record-watch-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 0.85rem 1.15rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid #B8860B;
+}
+
+.record-watch-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.record-watch-athlete {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.record-watch-name {
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+a.record-watch-name:hover {
+  color: #B8860B;
+  text-decoration: underline;
+}
+
+.record-watch-event {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  background: var(--gray-100);
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+}
+
+.record-watch-diff {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #B8860B;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.record-watch-bar-wrap {
+  height: 6px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.45rem;
+}
+
+.record-watch-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #B8860B, #DAA520);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.record-watch-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--gray-500, #999);
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.record-watch-stats strong {
+  color: var(--navy);
+}
+
 .records-division {
   max-width: 1000px;
   margin: 0 auto 2.5rem;
@@ -139,6 +250,16 @@
 }
 
 @media (max-width: 768px) {
+  .record-watch {
+    padding: 0 1rem;
+  }
+  .record-watch-card {
+    padding: 0.75rem 0.85rem;
+  }
+  .record-watch-stats {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
   .records-division {
     padding: 0 1rem;
   }

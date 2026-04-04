@@ -2,9 +2,14 @@ import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import './Navbar.css'
 
-export default function Navbar() {
+export default function Navbar({ onLogout }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const close = () => setMenuOpen(false)
+
+  function handleLogout() {
+    close()
+    onLogout()
+  }
 
   return (
     <nav className="navbar">
@@ -30,6 +35,7 @@ export default function Navbar() {
         <li><NavLink to="/gallery" onClick={close}>Gallery</NavLink></li>
         <li><NavLink to="/practice" onClick={close}>Practice</NavLink></li>
         <li><NavLink to="/records" onClick={close}>Records</NavLink></li>
+        <li className="nav-logout"><button onClick={handleLogout} className="logout-btn">Log Out</button></li>
       </ul>
     </nav>
   )

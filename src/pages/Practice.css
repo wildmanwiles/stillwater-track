@@ -309,6 +309,154 @@
   background: #fdf5ef;
 }
 
+/* Chart Toggle */
+.chart-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chart-toggle-btn {
+  padding: 0.35rem 0.85rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.chart-toggle-btn:hover {
+  border-color: var(--navy);
+  background: var(--navy-bg);
+}
+
+.chart-toggle-btn.active {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+.chart-gender-filter {
+  display: flex;
+  gap: 0.3rem;
+  margin-left: 0.5rem;
+}
+
+.chart-gender-btn {
+  padding: 0.3rem 0.7rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 16px;
+  background: var(--white);
+  color: var(--gray-600);
+  font-weight: 700;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.chart-gender-btn:hover {
+  border-color: var(--gold);
+}
+
+.chart-gender-btn.active {
+  background: var(--gold);
+  color: var(--navy-dark);
+  border-color: var(--gold);
+}
+
+/* Line Chart Container */
+.chart-container {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1rem 0.75rem;
+}
+
+/* Bar Chart */
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bar-row.top-1 .bar-fill {
+  background: linear-gradient(90deg, #B8860B, #DAA520);
+}
+
+.bar-row.top-2 .bar-fill {
+  background: linear-gradient(90deg, #6b7280, #9ca3af);
+}
+
+.bar-row.top-3 .bar-fill {
+  background: linear-gradient(90deg, #b45309, #d97706);
+}
+
+.bar-name {
+  width: 120px;
+  flex-shrink: 0;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--navy);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar-track {
+  flex: 1;
+  height: 26px;
+  background: var(--gray-100);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--navy), #2d5aa0);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+  min-width: 40px;
+  transition: width 0.4s ease;
+}
+
+.bar-value {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.chart-empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--gray-500, #999);
+  font-style: italic;
+  font-size: 0.9rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
 .practice-placeholder {
   text-align: center;
   padding: 4rem 2rem;
@@ -400,5 +548,18 @@
   }
   .workout-table .col-time {
     min-width: 38px;
+  }
+  .bar-name {
+    width: 80px;
+    font-size: 0.75rem;
+  }
+  .bar-track {
+    height: 22px;
+  }
+  .bar-chart {
+    padding: 0.85rem;
+  }
+  .chart-toggle-row {
+    flex-wrap: wrap;
   }
 }

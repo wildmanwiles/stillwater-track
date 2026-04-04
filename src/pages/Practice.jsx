@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts'
 import practiceData from '../data/practiceData.json'
 import './Practice.css'
 
@@ -11,24 +12,21 @@ const TABS = [
 ]
 
 const WORKOUT_DISTANCES = {
-  '10x40M': 40,
-  '5x100M': 100,
-  '10M Fly': 10,
-  '25M to 10M Fly': 10,
-  '20M Competitive Fly': 20,
-  '200x3 / 600M Predictor': 200,
-  '5x40M Fly': 40,
+  '10x40M': 40, '5x100M': 100, '10M Fly': 10, '25M to 10M Fly': 10,
+  '20M Competitive Fly': 20, '200x3 / 600M Predictor': 200, '5x40M Fly': 40,
 }
 
 const SOURCE_LABELS = {
-  '10x40M': '40M',
-  '5x100M': '100M',
-  '10M Fly': '10M Fly',
-  '25M to 10M Fly': '25M Fly',
-  '20M Competitive Fly': '20M Fly',
-  '200x3 / 600M Predictor': '200M',
-  '5x40M Fly': '40M Fly',
+  '10x40M': '40M', '5x100M': '100M', '10M Fly': '10M Fly',
+  '25M to 10M Fly': '25M Fly', '20M Competitive Fly': '20M Fly',
+  '200x3 / 600M Predictor': '200M', '5x40M Fly': '40M Fly',
 }
+
+const CHART_COLORS = [
+  '#1B3A6B', '#B8860B', '#dc2626', '#16a34a', '#7c3aed',
+  '#ea580c', '#0891b2', '#db2777', '#4f46e5', '#65a30d',
+  '#0d9488', '#9333ea',
+]
 
 function getBestTime(a) {
   if (a.best != null) return a.best
@@ -48,7 +46,6 @@ function getAthleteMph(a, workoutType) {
 }
 
 function computeSpeedBoard() {
-  // Find the most recent session date across all workouts
   let latestDate = ''
   for (const workout of practiceData.workouts) {
     for (const session of workout.sessions) {
@@ -56,9 +53,7 @@ function computeSpeedBoard() {
     }
   }
 
-  // Build best MPH for each athlete, tracking source date
   const athleteMap = {}
-  // Also build best MPH excluding the latest date for PB detection
   const prevMap = {}
 
   for (const workout of practiceData.workouts) {
@@ -70,34 +65,24 @@ function computeSpeedBoard() {
 
         if (!athleteMap[key] || mph > athleteMap[key].mph) {
           athleteMap[key] = {
-            name: a.name,
-            grade: a.grade,
-            gender: a.gender,
-            mph,
-            source: workout.type,
-            date: session.date,
+            name: a.name, grade: a.grade, gender: a.gender,
+            mph, source: workout.type, date: session.date,
           }
         }
 
         if (session.date !== latestDate) {
-          if (!prevMap[key] || mph > prevMap[key]) {
-            prevMap[key] = mph
-          }
+          if (!prevMap[key] || mph > prevMap[key]) prevMap[key] = mph
         }
       }
     }
   }
 
-  // Mark NEW PB if best came from latest session and beats previous best
   const all = Object.values(athleteMap).map(entry => ({
     ...entry,
     isNewPb: entry.date === latestDate && (!prevMap[entry.name] || entry.mph > prevMap[entry.name]),
   }))
 
-  return {
-    males: all.filter(a => a.gender === 'M'),
-    females: all.filter(a => a.gender === 'F'),
-  }
+  return { males: all.filter(a => a.gender === 'M'), females: all.filter(a => a.gender === 'F') }
 }
 
 const speedBoard = computeSpeedBoard()
@@ -122,11 +107,7 @@ function LeaderTable({ title, entries }) {
             {sorted.map((entry, i) => (
               <tr key={entry.name} className={i < 3 ? `top-${i + 1}` : ''}>
                 <td className="col-rank">
-                  {i < 3 ? (
-                    <span className="medal">{MEDALS[i]}</span>
-                  ) : (
-                    <span className="rank-num">{i + 1}</span>
-                  )}
+                  {i < 3 ? <span className="medal">{MEDALS[i]}</span> : <span className="rank-num">{i + 1}</span>}
                 </td>
                 <td className="athlete-cell">{entry.name}</td>
                 <td>{entry.grade}</td>
@@ -224,9 +205,72 @@ function WorkoutTable({ title, athletes, workout }) {
   )
 }
 
+function SpeedProgressionChart({ gender }) {
+  // Build MPH progression across ALL workout types for each athlete
+  const points = []
+  for (const workout of practiceData.workouts) {
+    for (const session of workout.sessions) {
+      for (const a of session.athletes) {
+        if (a.gender !== gender) continue
+        const mph = getAthleteMph(a, workout.type)
+        if (mph == null) continue
+        points.push({ name: a.name, date: session.date, mph })
+      }
+    }
+  }
+
+  // Get unique athletes and dates
+  const athleteNames = [...new Set(points.map(p => p.name))]
+  const dates = [...new Set(points.map(p => p.date))].sort()
+
+  // For each date, pick the best mph per athlete across all workout types on that date
+  const chartData = dates.map(date => {
+    const row = { date: new Date(date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) }
+    for (const name of athleteNames) {
+      const matching = points.filter(p => p.date === date && p.name === name)
+      if (matching.length > 0) {
+        row[name] = Math.max(...matching.map(m => m.mph))
+      }
+    }
+    return row
+  })
+
+  // Sort athletes by their best MPH for color assignment (best gets gold)
+  const athleteBest = athleteNames.map(n => ({
+    name: n,
+    best: Math.max(...points.filter(p => p.name === n).map(p => p.mph)),
+  })).sort((a, b) => b.best - a.best)
+
+  return (
+    <div className="chart-container">
+      <ResponsiveContainer width="100%" height={320}>
+        <LineChart data={chartData} margin={{ top: 10, right: 20, bottom: 5, left: 0 }}>
+          <XAxis dataKey="date" tick={{ fontSize: 11 }} />
+          <YAxis domain={['auto', 'auto']} tick={{ fontSize: 11 }} label={{ value: 'MPH', angle: -90, position: 'insideLeft', style: { fontSize: 11 } }} />
+          <Tooltip />
+          <Legend wrapperStyle={{ fontSize: 11 }} />
+          {athleteBest.map((a, i) => (
+            <Line
+              key={a.name}
+              type="monotone"
+              dataKey={a.name}
+              stroke={i === 0 ? '#B8860B' : CHART_COLORS[i % CHART_COLORS.length]}
+              strokeWidth={i === 0 ? 3 : 1.5}
+              dot={{ r: 3 }}
+              connectNulls={false}
+            />
+          ))}
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+
 function SprintTimes() {
   const workouts = practiceData.workouts
   const [workoutIdx, setWorkoutIdx] = useState(0)
+  const [showChart, setShowChart] = useState(false)
+  const [chartGender, setChartGender] = useState('M')
   const workout = workouts[workoutIdx]
   const session = workout.sessions[0]
 
@@ -256,14 +300,81 @@ function SprintTimes() {
         </span>
       </div>
 
-      {girls.length > 0 && <WorkoutTable title="Girls" athletes={girls} workout={workout} />}
-      {boys.length > 0 && <WorkoutTable title="Boys" athletes={boys} workout={workout} />}
+      <div className="chart-toggle-row">
+        <button
+          className={`chart-toggle-btn ${!showChart ? 'active' : ''}`}
+          onClick={() => setShowChart(false)}
+        >
+          Table
+        </button>
+        <button
+          className={`chart-toggle-btn ${showChart ? 'active' : ''}`}
+          onClick={() => setShowChart(true)}
+        >
+          Chart
+        </button>
+        {showChart && (
+          <div className="chart-gender-filter">
+            <button className={`chart-gender-btn ${chartGender === 'M' ? 'active' : ''}`} onClick={() => setChartGender('M')}>Boys</button>
+            <button className={`chart-gender-btn ${chartGender === 'F' ? 'active' : ''}`} onClick={() => setChartGender('F')}>Girls</button>
+          </div>
+        )}
+      </div>
+
+      {showChart ? (
+        <WorkoutChart workout={workout} gender={chartGender} />
+      ) : (
+        <>
+          {girls.length > 0 && <WorkoutTable title="Girls" athletes={girls} workout={workout} />}
+          {boys.length > 0 && <WorkoutTable title="Boys" athletes={boys} workout={workout} />}
+        </>
+      )}
+    </div>
+  )
+}
+
+function WorkoutChart({ workout, gender }) {
+  const session = workout.sessions[0]
+  const athletes = session.athletes.filter(a => a.gender === gender)
+
+  if (athletes.length === 0) {
+    return <div className="chart-empty">No data for this gender in this workout</div>
+  }
+
+  // Build bar chart data (single session = comparison bars)
+  const sorted = [...athletes].sort((a, b) => {
+    const mphA = getAthleteMph(a, workout.type) || 0
+    const mphB = getAthleteMph(b, workout.type) || 0
+    return mphB - mphA
+  })
+
+  const maxMph = Math.max(...sorted.map(a => getAthleteMph(a, workout.type) || 0))
+
+  return (
+    <div className="bar-chart">
+      {sorted.map((a, i) => {
+        const mph = getAthleteMph(a, workout.type)
+        if (mph == null) return null
+        const pct = (mph / maxMph) * 100
+        return (
+          <div key={a.name} className={`bar-row ${i < 3 ? `top-${i + 1}` : ''}`}>
+            <span className="bar-name">{a.name}</span>
+            <div className="bar-track">
+              <div className="bar-fill" style={{ width: `${pct}%` }}>
+                <span className="bar-value">{mph.toFixed(1)}</span>
+              </div>
+            </div>
+          </div>
+        )
+      })}
     </div>
   )
 }
 
 export default function Practice() {
   const [activeTab, setActiveTab] = useState('speed-board')
+  const [speedChart, setSpeedChart] = useState(false)
+  const [speedChartGender, setSpeedChartGender] = useState('M')
 
   return (
     <div className="page practice">
@@ -287,10 +398,26 @@ export default function Practice() {
 
       <div className="perf-content">
         {activeTab === 'speed-board' && (
-          <div className="leader-grid">
-            <LeaderTable title="Boys" entries={speedBoard.males} />
-            <LeaderTable title="Girls" entries={speedBoard.females} />
-          </div>
+          <>
+            <div className="chart-toggle-row">
+              <button className={`chart-toggle-btn ${!speedChart ? 'active' : ''}`} onClick={() => setSpeedChart(false)}>Table</button>
+              <button className={`chart-toggle-btn ${speedChart ? 'active' : ''}`} onClick={() => setSpeedChart(true)}>Chart</button>
+              {speedChart && (
+                <div className="chart-gender-filter">
+                  <button className={`chart-gender-btn ${speedChartGender === 'M' ? 'active' : ''}`} onClick={() => setSpeedChartGender('M')}>Boys</button>
+                  <button className={`chart-gender-btn ${speedChartGender === 'F' ? 'active' : ''}`} onClick={() => setSpeedChartGender('F')}>Girls</button>
+                </div>
+              )}
+            </div>
+            {speedChart ? (
+              <SpeedProgressionChart gender={speedChartGender} />
+            ) : (
+              <div className="leader-grid">
+                <LeaderTable title="Boys" entries={speedBoard.males} />
+                <LeaderTable title="Girls" entries={speedBoard.females} />
+              </div>
+            )}
+          </>
         )}
 
         {activeTab === 'sprint-times' && <SprintTimes />}
