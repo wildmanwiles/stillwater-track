@@ -82,6 +82,87 @@
   margin-top: 0.25rem;
 }
 
+/* Share Button */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.65rem;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--gray-600);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+  min-height: 36px;
+}
+
+.share-btn:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+/* Speed Rank Card */
+.speed-rank-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--gold);
+}
+
+.speed-rank-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.25rem;
+  background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%);
+  color: #fff;
+}
+
+.speed-rank-icon {
+  font-size: 1.1rem;
+}
+
+.speed-rank-label {
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.speed-rank-body {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+}
+
+.speed-rank-number {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #B8860B;
+  line-height: 1;
+}
+
+.speed-rank-gender {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-600);
+}
+
+.speed-rank-mph {
+  margin-left: auto;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+
 .profile-section {
   margin-bottom: 2rem;
 }

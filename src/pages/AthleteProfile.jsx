@@ -2,12 +2,18 @@ import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
 import athletes from '../data/athletes.json'
 import meetResults from '../data/meetResults.json'
+import practiceData from '../data/practiceData.json'
 import { isSchoolRecord } from '../utils/recordCheck'
 import AthletePhoto from '../components/AthletePhoto'
 import '../components/SchoolRecordBanner.css'
 import './AthleteProfile.css'
 
 const TIME_EVENTS = new Set(['100m', '200m', '400m', '800m', '1500m', '1600m', '3200m', '110m Hurdles', '100m Hurdles', '300m Hurdles', '60m Hurdles'])
+
+const WORKOUT_DISTANCES = {
+  '10x40M': 40, '5x100M': 100, '10M Fly': 10, '25M to 10M Fly': 10,
+  '20M Competitive Fly': 20, '200x3 / 600M Predictor': 200, '5x40M Fly': 40,
+}
 
 function parseTime(mark) {
   if (mark.includes(':')) {
@@ -23,10 +29,43 @@ function parseMeasurement(mark) {
   return 0
 }
 
+function getAthleteMph(a, workoutType) {
+  if (a.mph != null) return a.mph
+  if (a.avgMph != null) return a.avgMph
+  const best = a.best || a.best100 || a.best200 || null
+  if (best == null) return null
+  const dist = WORKOUT_DISTANCES[workoutType]
+  if (!dist) return null
+  return (dist / best) * 2.23694
+}
+
+function computeSpeedRanks() {
+  const map = {}
+  for (const workout of practiceData.workouts) {
+    for (const session of workout.sessions) {
+      for (const a of session.athletes) {
+        const mph = getAthleteMph(a, workout.type)
+        if (mph == null) continue
+        if (!map[a.name] || mph > map[a.name].mph) {
+          map[a.name] = { name: a.name, gender: a.gender, mph }
+        }
+      }
+    }
+  }
+  const all = Object.values(map)
+  const males = all.filter(a => a.gender === 'M').sort((a, b) => b.mph - a.mph)
+  const females = all.filter(a => a.gender === 'F').sort((a, b) => b.mph - a.mph)
+  const ranks = {}
+  males.forEach((a, i) => { ranks[a.name] = { rank: i + 1, total: males.length, mph: a.mph, label: 'Males' } })
+  females.forEach((a, i) => { ranks[a.name] = { rank: i + 1, total: females.length, mph: a.mph, label: 'Females' } })
+  return ranks
+}
+
+const speedRanks = computeSpeedRanks()
+
 function buildProgression(seasonHistory) {
   if (!seasonHistory || seasonHistory.length < 2) return []
 
-  // For each event in each season, find the best mark
   const eventSeasons = {}
   seasonHistory.forEach(season => {
     season.results.forEach(r => {
@@ -35,7 +74,6 @@ function buildProgression(seasonHistory) {
       if (!existing) {
         eventSeasons[r.event].push({ season: season.season, mark: r.mark })
       } else {
-        // Keep the better mark
         const isTime = TIME_EVENTS.has(r.event)
         if (isTime) {
           if (parseTime(r.mark) < parseTime(existing.mark)) existing.mark = r.mark
@@ -46,12 +84,10 @@ function buildProgression(seasonHistory) {
     })
   })
 
-  // Filter to events with 2+ seasons
   return Object.entries(eventSeasons)
     .filter(([, seasons]) => seasons.length >= 2)
     .map(([event, seasons]) => {
       const isTime = TIME_EVENTS.has(event)
-      // Find the all-time best
       let bestMark = seasons[0].mark
       seasons.forEach(s => {
         if (isTime) {
@@ -129,6 +165,39 @@ function SeasonSection({ season, defaultOpen }) {
   )
 }
 
+function ShareButton({ athleteName }) {
+  const [copied, setCopied] = useState(false)
+
+  async function handleShare() {
+    const shareData = {
+      title: `${athleteName} — SCS Track & Field`,
+      text: `Check out ${athleteName} on SCS Cougars Track & Field!`,
+      url: window.location.href,
+    }
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData)
+      } catch (e) {
+        // user cancelled share
+      }
+    } else {
+      await navigator.clipboard.writeText(window.location.href)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
+  }
+
+  return (
+    <button className="share-btn" onClick={handleShare} aria-label="Share profile">
+      <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+        <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+      </svg>
+      {copied ? 'Link copied!' : 'Share'}
+    </button>
+  )
+}
+
 export default function AthleteProfile() {
   const { slug } = useParams()
   const athlete = athletes.find(a => `${a.first}-${a.last}`.toLowerCase() === slug)
@@ -145,6 +214,7 @@ export default function AthleteProfile() {
   }
 
   const fullName = `${athlete.first} ${athlete.last}`
+  const speed = speedRanks[fullName]
 
   // Gather all meet results for this athlete
   const athleteResults = []
@@ -179,6 +249,7 @@ export default function AthleteProfile() {
         {athlete.role !== 'manager' && athlete.primaryEvent && (
           <p className="profile-primary">Primary: {athlete.primaryEvent}</p>
         )}
+        <ShareButton athleteName={fullName} />
       </div>
 
       {athlete.role !== 'manager' && athlete.events.length > 0 && (
@@ -188,6 +259,22 @@ export default function AthleteProfile() {
             {athlete.events.map(e => (
               <span key={e} className="profile-event-tag">{e}</span>
             ))}
+          </div>
+        </section>
+      )}
+
+      {speed && (
+        <section className="profile-section">
+          <div className="speed-rank-card">
+            <div className="speed-rank-header">
+              <span className="speed-rank-icon">&#9889;</span>
+              <span className="speed-rank-label">Speed Rank</span>
+            </div>
+            <div className="speed-rank-body">
+              <span className="speed-rank-number">#{speed.rank}</span>
+              <span className="speed-rank-gender">{speed.label}</span>
+              <span className="speed-rank-mph">{speed.mph.toFixed(1)} MPH</span>
+            </div>
           </div>
         </section>
       )}
@@ -284,7 +371,7 @@ export default function AthleteProfile() {
         </section>
       )}
 
-      {athlete.role !== 'manager' && athleteResults.length === 0 && prEntries.length === 0 && seasonHistory.length === 0 && (
+      {athlete.role !== 'manager' && athleteResults.length === 0 && prEntries.length === 0 && seasonHistory.length === 0 && !speed && (
         <div className="profile-empty">No results recorded yet.</div>
       )}
     </div>

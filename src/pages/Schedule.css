@@ -68,6 +68,30 @@
   color: var(--gray-600);
 }
 
+.schedule-location-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.schedule-location-link:hover {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+.map-pin-icon {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.schedule-location-link:hover .map-pin-icon {
+  opacity: 1;
+}
+
 .status-pill {
   font-size: 0.78rem;
   font-weight: 700;

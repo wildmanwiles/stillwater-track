@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
+import records from '../data/records.json'
 import { isSchoolRecord } from '../utils/recordCheck'
 import '../components/SchoolRecordBanner.css'
 import './Performance.css'
@@ -125,13 +126,30 @@ function EventRankings({ event, results, gender, label }) {
   )
 }
 
+function getSchoolRecord(event, gender) {
+  const division = records.highSchool
+  const genderRecords = gender === 'M' ? division.boys : division.girls
+  const rec = genderRecords.find(r => r.event === event)
+  if (!rec || rec.mark === '—') return null
+  return rec
+}
+
 function GenderEventBlock({ event, results, gender, label }) {
   const filtered = results.filter(r => r.event === event && r.gender === gender)
   if (filtered.length === 0) return null
 
+  const sr = getSchoolRecord(event, gender)
+
   return (
     <div className="perf-gender-block">
-      <h4 className="perf-gender-label">{label}</h4>
+      <h4 className="perf-gender-label">
+        {label}
+        {sr && (
+          <span className="perf-record-ref">
+            School Record: {sr.mark} — {sr.athlete}{sr.year ? ` (${sr.year})` : ''}
+          </span>
+        )}
+      </h4>
       <EventRankings event={event} results={results} gender={gender} label={label} />
     </div>
   )

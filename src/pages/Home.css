@@ -82,6 +82,31 @@
   margin-top: 0.1rem;
 }
 
+.next-countdown {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #B8860B;
+  margin-top: 0.4rem;
+  letter-spacing: 0.04em;
+}
+
+.next-countdown.today {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.next-countdown.tomorrow {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.next-countdown.season-complete {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
 /* Quick links */
 .quick-links {
   display: grid;
