@@ -391,6 +391,19 @@ export default function Practice() {
         )}
       </div>
 
+      <a href="https://www.stillwaterchristianschool.org/calendar/track-field/" target="_blank" rel="noopener noreferrer" className="practice-cal-banner">
+        <svg className="practice-cal-icon" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+          <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+        </svg>
+        <div className="practice-cal-text">
+          <span className="practice-cal-title">Practice Schedule &amp; Locations</span>
+          <span className="practice-cal-sub">View the full track &amp; field calendar on the SCS website</span>
+        </div>
+        <svg className="practice-cal-arrow" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+          <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+        </svg>
+      </a>
+
       <div className="perf-tabs">
         {TABS.map(tab => (
           <button
