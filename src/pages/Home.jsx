@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { isCoach } from '../utils/auth'
 import announcements from '../data/announcements.json'
 import schedule from '../data/schedule.json'
 import './Home.css'
@@ -98,7 +99,15 @@ export default function Home() {
       </section>
 
       <section className="announcements-section">
-        <h2 className="section-title">News &amp; Announcements</h2>
+        <div className="section-title-row">
+          <h2 className="section-title">News &amp; Announcements</h2>
+          {isCoach() && (
+            <Link to="/admin" className="coach-edit-btn">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" /></svg>
+              Edit
+            </Link>
+          )}
+        </div>
         <div className="announcement-list">
           {sorted.map(a => (
             <article key={a.id} className="announcement-card">

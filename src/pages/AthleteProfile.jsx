@@ -1,11 +1,13 @@
 import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
+import { isCoach } from '../utils/auth'
 import athletes from '../data/athletes.json'
 import meetResults from '../data/meetResults.json'
 import practiceData from '../data/practiceData.json'
 import { isSchoolRecord } from '../utils/recordCheck'
 import AthletePhoto from '../components/AthletePhoto'
 import '../components/SchoolRecordBanner.css'
+import '../pages/Admin.css'
 import './AthleteProfile.css'
 
 const TIME_EVENTS = new Set(['100m', '200m', '400m', '800m', '1500m', '1600m', '3200m', '110m Hurdles', '100m Hurdles', '300m Hurdles', '60m Hurdles'])
@@ -368,6 +370,24 @@ export default function AthleteProfile() {
               </div>
             </div>
           ))}
+        </section>
+      )}
+
+      {isCoach() && (
+        <section className="profile-section coach-notes-section">
+          <div className="coach-notes-header">
+            <h2 className="profile-section-title" style={{ marginBottom: 0, borderBottom: 'none', paddingBottom: 0 }}>Coach Notes</h2>
+            <span className="coach-notes-badge">Coach Only</span>
+          </div>
+          <textarea
+            className="coach-notes-textarea"
+            placeholder="Add notes about this athlete (injury status, training notes, etc.)"
+            rows={4}
+          />
+          <div className="disabled-btn-wrap" style={{ marginTop: '0.75rem' }}>
+            <button className="admin-save-btn disabled" disabled>Save Notes</button>
+            <span className="disabled-tooltip">Database connection required. Coming in next update.</span>
+          </div>
         </section>
       )}
 

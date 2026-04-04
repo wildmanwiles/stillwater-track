@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts'
+import { isCoach } from '../utils/auth'
 import practiceData from '../data/practiceData.json'
 import './Practice.css'
 
@@ -381,6 +383,12 @@ export default function Practice() {
       <div className="page-header">
         <h1 className="page-title">Practice</h1>
         <p className="page-subtitle">Training Data &amp; Speed Rankings</p>
+        {isCoach() && (
+          <Link to="/admin" className="coach-edit-btn" style={{ marginTop: '0.75rem' }}>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" /></svg>
+            Add Practice Session
+          </Link>
+        )}
       </div>
 
       <div className="perf-tabs">

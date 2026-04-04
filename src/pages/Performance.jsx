@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { isCoach } from '../utils/auth'
 import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
 import records from '../data/records.json'
@@ -271,6 +272,12 @@ export default function Results() {
       <div className="page-header">
         <h1 className="page-title">Results</h1>
         <p className="page-subtitle">2026 Season Meet Results</p>
+        {isCoach() && (
+          <Link to="/admin" className="coach-edit-btn" style={{ marginTop: '0.75rem' }}>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" /></svg>
+            Add Meet Results
+          </Link>
+        )}
       </div>
 
       <div className="perf-tabs">

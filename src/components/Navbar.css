@@ -88,6 +88,42 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Admin badge (desktop) */
+.nav-admin-badge-item {
+  display: flex;
+  align-items: center;
+  margin-left: 0.25rem;
+}
+
+.nav-admin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: linear-gradient(135deg, #B8860B, #DAA520);
+  color: var(--navy-dark);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 10px;
+}
+
+/* Admin Panel link */
+.nav-admin {
+  display: none;
+}
+
+.nav-admin-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-admin-icon {
+  flex-shrink: 0;
+}
+
 .nav-logout {
   margin-left: 0.25rem;
 }
@@ -143,6 +179,14 @@
     min-height: 44px;
     display: flex;
     align-items: center;
+  }
+
+  .nav-admin {
+    display: list-item;
+  }
+
+  .nav-admin-badge-item {
+    display: none;
   }
 
   .nav-logout {

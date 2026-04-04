@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { isCoach } from '../utils/auth'
 import records from '../data/records.json'
 import meetResults from '../data/meetResults.json'
 import athletes from '../data/athletes.json'
@@ -206,6 +207,12 @@ export default function Records() {
       <div className="page-header">
         <h1 className="page-title">School Records</h1>
         <p className="page-subtitle">Stillwater Christian Track &amp; Field Record Book</p>
+        {isCoach() && (
+          <Link to="/admin" className="coach-edit-btn" style={{ marginTop: '0.75rem' }}>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" /></svg>
+            Edit Records
+          </Link>
+        )}
       </div>
 
       <RecordWatch />

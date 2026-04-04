@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { isCoach } from '../utils/auth'
 import galleryData from '../data/gallery.json'
 import './Gallery.css'
 
@@ -27,6 +29,12 @@ export default function Gallery() {
       <div className="page-header">
         <h1 className="page-title">Gallery</h1>
         <p className="page-subtitle">Photos from the 2026 Season</p>
+        {isCoach() && (
+          <Link to="/admin" className="coach-edit-btn" style={{ marginTop: '0.75rem' }}>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" /></svg>
+            Upload Photos
+          </Link>
+        )}
       </div>
 
       {galleryData.map((meet, mi) => (
