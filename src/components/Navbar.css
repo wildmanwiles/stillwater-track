@@ -124,6 +124,11 @@
   flex-shrink: 0;
 }
 
+/* About link - hidden on desktop, shown in mobile menu */
+.nav-about {
+  display: none;
+}
+
 .nav-logout {
   margin-left: 0.25rem;
 }
@@ -187,6 +192,15 @@
 
   .nav-admin-badge-item {
     display: none;
+  }
+
+  .nav-about {
+    display: list-item;
+  }
+
+  .nav-about a {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.82rem;
   }
 
   .nav-logout {

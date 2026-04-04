@@ -46,6 +46,7 @@ export default function Navbar({ onLogout }) {
           </NavLink></li>
         )}
         {coach && <li className="nav-admin-badge-item"><span className="nav-admin-badge">Admin</span></li>}
+        <li className="nav-about"><NavLink to="/about" onClick={close}>About This App</NavLink></li>
         <li className="nav-logout"><button onClick={handleLogout} className="logout-btn">Log Out</button></li>
       </ul>
     </nav>

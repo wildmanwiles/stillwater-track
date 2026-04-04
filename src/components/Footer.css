@@ -1,18 +1,130 @@
 .footer {
-  background: var(--navy-dark);
-  color: rgba(255,255,255,0.5);
-  text-align: center;
-  padding: 1.75rem 1.5rem;
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.6);
   margin-top: auto;
 }
 
-.footer-brand {
-  font-size: 0.9rem;
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 2rem;
+}
+
+.footer-heading {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+/* School column */
+.footer-address {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+.footer-motto {
+  font-style: italic;
+  color: #B8860B;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.7);
+}
+
+/* Links column */
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-links a {
+  color: #B8860B;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover {
+  color: #DAA520;
+  text-decoration: underline;
+}
+
+/* Connect column */
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #B8860B;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  transition: color 0.15s;
+}
+
+.footer-social:hover {
+  color: #DAA520;
+}
+
+.footer-contact {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.footer-contact a {
+  color: #B8860B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+  color: #DAA520;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(184, 134, 11, 0.3);
+  text-align: center;
+  padding: 1.25rem 2rem;
+  font-size: 0.78rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom p:first-child {
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: 0.2rem;
 }
 
-.footer-sub {
-  font-size: 0.8rem;
+.footer-built {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.72rem;
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2rem 1.25rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    padding: 1rem 1.25rem;
+  }
 }

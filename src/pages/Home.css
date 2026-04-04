@@ -199,6 +199,61 @@
   line-height: 1.65;
 }
 
+/* Athletics integration links */
+.athletics-links-section {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2.5rem;
+  text-align: center;
+}
+
+.athletics-links-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-500, #999);
+  margin-bottom: 0.75rem;
+}
+
+.athletics-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.athletics-link-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--gray-600);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.athletics-link-card svg {
+  color: var(--gray-400, #bbb);
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.athletics-link-card:hover {
+  border-color: var(--gold);
+  color: var(--navy);
+  background: #fef9e7;
+}
+
+.athletics-link-card:hover svg {
+  color: #B8860B;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 3rem 1.25rem 2.5rem;

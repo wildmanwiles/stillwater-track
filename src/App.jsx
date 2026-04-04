@@ -12,6 +12,7 @@ import Records from './pages/Records'
 import MeetResults from './pages/MeetResults'
 import AthleteProfile from './pages/AthleteProfile'
 import Admin from './pages/Admin'
+import About from './pages/About'
 import Login from './pages/Login'
 import './App.css'
 
@@ -53,6 +54,7 @@ export default function App() {
             <Route path="/results/:meetId" element={<MeetResults />} />
             <Route path="/athlete/:slug" element={<AthleteProfile />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </main>
         <Footer />
