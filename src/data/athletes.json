@@ -1537,9 +1537,40 @@
     ],
     "prs": {
       "400m": "1:02.28",
-      "1500m": "5:03.29"
+      "800m": "2:38.0h",
+      "1500m": "5:03.29",
+      "1600m": "6:14.9h",
+      "3200m": "13:34.41",
+      "High Jump": "4'8\"",
+      "Long Jump": "11'6.5\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2024",
+        "grade": 7,
+        "results": [
+          { "event": "800m", "mark": "2:42.2h", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true },
+          { "event": "1600m", "mark": "6:18.7h", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true },
+          { "event": "High Jump", "mark": "4'4\"", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true },
+          { "event": "Long Jump", "mark": "11'6.5\"", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true }
+        ]
+      },
+      {
+        "season": "2025",
+        "grade": 8,
+        "results": [
+          { "event": "800m", "mark": "2:38.0h", "meet": "Stillwater Christian Invitational", "date": "2025-04-26", "pr": true },
+          { "event": "800m", "mark": "2:40.46", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" },
+          { "event": "1600m", "mark": "6:14.9h", "meet": "Stillwater Christian Invitational", "date": "2025-04-26", "pr": true },
+          { "event": "3200m", "mark": "13:34.41", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10", "pr": true },
+          { "event": "High Jump", "mark": "4'6\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
+          { "event": "High Jump", "mark": "4'8\"", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10", "pr": true },
+          { "event": "Long Jump", "mark": "10'5\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
+          { "event": "Long Jump", "mark": "11'3\"", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" }
+        ]
+      }
+    ]
   },
   {
     "id": 30,
