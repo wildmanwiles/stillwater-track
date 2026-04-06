@@ -48,3 +48,8 @@ h1, h2, h3, h4 {
 img {
   max-width: 100%;
 }
+
+/* Prevent iOS Safari auto-zoom on input focus (requires >= 16px) */
+input, textarea, select {
+  font-size: 16px;
+}
