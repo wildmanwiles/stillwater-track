@@ -126,6 +126,36 @@ function LeaderTable({ title, entries }) {
   )
 }
 
+function formatPred400(seconds) {
+  const mins = Math.floor(seconds / 60)
+  const secs = seconds - mins * 60
+  return `${mins}:${secs < 10 ? '0' : ''}${secs.toFixed(2)}`
+}
+
+function getPred400(a, workoutType) {
+  const times = a.splits || a.flies || []
+  const valid = times.filter(s => s != null)
+  if (workoutType === '10x40M') {
+    if (valid.length !== 10) return null
+    return formatPred400(valid.reduce((s, v) => s + v, 0))
+  }
+  if (workoutType === '5x100M') {
+    if (valid.length < 5) return null
+    return formatPred400(valid.reduce((s, v) => s + v, 0) * 0.93)
+  }
+  if (workoutType === '200x3 / 600M Predictor') {
+    if (valid.length < 3) return null
+    return formatPred400(valid.reduce((s, v) => s + v, 0) * 0.667 + 2)
+  }
+  if (workoutType === '5x40M Fly') {
+    if (valid.length === 0) return null
+    return formatPred400((valid.reduce((s, v) => s + v, 0) / valid.length) * 10)
+  }
+  return null
+}
+
+const PRED400_TYPES = new Set(['10x40M', '5x100M', '200x3 / 600M Predictor', '5x40M Fly'])
+
 function getSortKey(a) {
   if (a.best != null) return a.best
   if (a.best100 != null) return a.best100
@@ -159,6 +189,7 @@ function WorkoutTable({ title, athletes, workout }) {
   const timeCols = sorted[0]?.splits || sorted[0]?.flies || []
   const numTimes = timeCols.length
   const summaryHeaders = getSummaryHeaders(workout)
+  const showPred = PRED400_TYPES.has(workout.type)
 
   return (
     <div className="workout-section">
@@ -176,12 +207,14 @@ function WorkoutTable({ title, athletes, workout }) {
               {summaryHeaders.map(h => (
                 <th key={h} className="col-summary">{h}</th>
               ))}
+              {showPred && <th className="col-time">PRED 400</th>}
             </tr>
           </thead>
           <tbody>
             {sorted.map((a, i) => {
               const times = a.splits || a.flies || []
               const summaryVals = getSummaryValues(a, workout)
+              const pred = showPred ? getPred400(a, workout.type) : null
               return (
                 <tr key={a.name} className={i < 3 ? `top-${i + 1}` : ''}>
                   <td className="col-rank">
@@ -197,6 +230,11 @@ function WorkoutTable({ title, athletes, workout }) {
                   {summaryVals.map((v, j) => (
                     <td key={j} className="col-summary">{v}</td>
                   ))}
+                  {showPred && (
+                    <td className={`col-time ${pred == null ? 'dnf' : ''}`}>
+                      {pred != null ? pred : '—'}
+                    </td>
+                  )}
                 </tr>
               )
             })}
