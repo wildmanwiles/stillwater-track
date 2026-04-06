@@ -2,7 +2,7 @@
   "workouts": [
     {
       "type": "10x40M",
-      "description": "10 x 40 meter sprints, timed individually, with predicted 400M time",
+      "description": "10 x 40 meter sprints, timed individually with OVR Sprint laser timing gates. Predicted 400M = sum of all 10 splits.",
       "sessions": [
         {
           "date": "2026-03-11",
@@ -36,7 +36,7 @@
     },
     {
       "type": "5x100M",
-      "description": "5 x 100m flys, ran in pairs, timed with OVR, walk back rest ~2.5 min. Told to run each like the back-stretch of 400. Predicted 400 = sum x 0.93",
+      "description": "5 x 100m flys, ran in pairs, timed with OVR Sprint laser timing gates, walk back rest ~2.5 min. Told to run each like the back-stretch of 400. Predicted 400 = sum x 0.93.",
       "sessions": [
         {
           "date": "2026-03-18",
@@ -108,7 +108,7 @@
     },
     {
       "type": "25M to 10M Fly",
-      "description": "25m run-in to 10m timed fly. Ranked by top speed.",
+      "description": "25m run-in to 10m timed fly. Timed with OVR Sprint laser timing gates. Ranked by top speed.",
       "sessions": [
         {
           "date": "2026-03-31",
@@ -142,7 +142,7 @@
     },
     {
       "type": "20M Competitive Fly",
-      "description": "20m competitive fly, timed.",
+      "description": "20m competitive fly. Timed with OVR Sprint laser timing gates.",
       "sessions": [
         {
           "date": "2026-03-25",
@@ -168,7 +168,7 @@
     },
     {
       "type": "200x3 / 600M Predictor",
-      "description": "3 x 200m with 3-4 min rest. Fly times with 10m run-in. Predictor = sum x 0.667 + 2 seconds.",
+      "description": "3 x 200m with 3-4 min rest. Fly times with 10m run-in. Timed with OVR Sprint laser timing gates. Predictor = sum x 0.667 + 2 seconds.",
       "sessions": [
         {
           "date": "2026-03-20",
@@ -191,7 +191,7 @@
     },
     {
       "type": "5x40M Fly",
-      "description": "5 x 40m fly with 20m run-in. Hand-timed with lasers. Only 5 of 10 planned heats were timed due to cold weather. Remaining 5 heats were run as untimed competitive races.",
+      "description": "5 x 40m fly with 20m run-in. Timed with OVR Sprint laser timing gates. Only 5 of 10 planned heats were timed due to cold weather. Remaining 5 heats were run as untimed competitive races. PRED 400 is projected from fly times and is not directly comparable to 10x40M predictions.",
       "sessions": [
         {
           "date": "2026-04-02",
