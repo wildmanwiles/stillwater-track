@@ -119,7 +119,7 @@ export default function Home() {
                 </span>
               </div>
               <h3>{a.title}</h3>
-              <p>{a.body}</p>
+              <p style={{ whiteSpace: 'pre-line' }}>{a.body}</p>
             </article>
           ))}
         </div>
