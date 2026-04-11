@@ -178,6 +178,186 @@
   color: var(--gold);
 }
 
+/* Export UI */
+.meet-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.export-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 44px;
+}
+
+.export-btn:hover {
+  background: var(--navy-light);
+}
+
+.export-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  min-width: 260px;
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+}
+
+.export-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--navy);
+  cursor: pointer;
+  text-align: left;
+  min-height: 44px;
+}
+
+.export-option:hover:not(:disabled) {
+  background: var(--navy-bg);
+}
+
+.export-option:not(:last-child) {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.export-option.disabled {
+  color: var(--gray-400);
+  cursor: not-allowed;
+}
+
+.export-coming-soon {
+  margin-left: auto;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--gray-200);
+  color: var(--gray-600);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+
+/* Sport Report Modal */
+.export-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.export-modal {
+  background: var(--white);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 700px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.export-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--gray-200);
+  flex-shrink: 0;
+}
+
+.export-modal-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+.export-modal-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.export-copy-btn {
+  background: var(--gold);
+  color: var(--navy-dark);
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.export-copy-btn:hover {
+  background: var(--gold-light);
+}
+
+.export-close-btn {
+  background: var(--gray-200);
+  color: var(--navy);
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.export-close-btn:hover {
+  background: var(--gray-400);
+}
+
+.export-textarea {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  resize: none;
+  color: var(--navy);
+  overflow-y: auto;
+  min-height: 300px;
+}
+
+.export-textarea:focus {
+  outline: none;
+}
+
 @media (max-width: 768px) {
   .result-row {
     padding: 0.6rem 0.85rem;
@@ -215,5 +395,26 @@
   .relay-athletes {
     font-size: 0.78rem;
     word-break: break-word;
+  }
+  .meet-header-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .export-dropdown {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    border-radius: var(--radius) var(--radius) 0 0;
+    min-width: unset;
+  }
+  .export-modal {
+    max-height: 90vh;
+  }
+  .export-modal-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
   }
 }
