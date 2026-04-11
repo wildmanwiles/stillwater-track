@@ -358,8 +358,21 @@ a.rw-name:hover {
   .records-table td {
     padding: 0.5rem 0.6rem;
   }
-  .records .year-cell,
-  .records-table th:last-child {
-    display: none;
+  .records-table th {
+    font-size: 0.65rem;
+  }
+  .event-cell {
+    font-size: 0.78rem;
+    white-space: normal;
+  }
+  .mark-cell.has-record {
+    font-size: 0.82rem;
+  }
+  .records .athlete-cell {
+    font-size: 0.78rem;
+  }
+  .records .year-cell {
+    font-size: 0.75rem;
+    white-space: nowrap;
   }
 }

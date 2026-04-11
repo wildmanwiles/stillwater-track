@@ -419,6 +419,7 @@
   .perf-result-row {
     padding: 0.45rem 0.85rem;
     gap: 0.4rem;
+    flex-wrap: wrap;
   }
   .perf-athlete-link {
     font-size: 0.82rem;
@@ -427,7 +428,10 @@
     font-size: 0.82rem;
   }
   .perf-result-meet {
-    display: none;
+    font-size: 0.68rem;
+    white-space: normal;
+    width: 100%;
+    order: 4;
   }
   .perf-event-title {
     padding: 0.55rem 0.85rem;
@@ -439,6 +443,6 @@
     gap: 0.15rem;
   }
   .perf-record-ref {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
   }
 }
