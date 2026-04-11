@@ -339,7 +339,7 @@ export default function AthleteProfile() {
                         <span className="profile-result-event">{r.event}</span>
                         <span className="profile-result-mark">{r.mark}</span>
                         <span className="profile-result-place">
-                          {r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`}
+                          {r.place != null ? (r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`) : '—'}
                         </span>
                       </div>
                     </div>
@@ -351,7 +351,7 @@ export default function AthleteProfile() {
                       <span className="profile-result-event">{r.event}</span>
                       <span className="profile-result-mark">{r.mark}</span>
                       <span className="profile-result-place">
-                        {r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`}
+                        {r.place != null ? (r.place <= 3 ? ['🥇','🥈','🥉'][r.place - 1] : `${r.place}th`) : '—'}
                       </span>
                     </div>
                     <div className="profile-relay-athletes">

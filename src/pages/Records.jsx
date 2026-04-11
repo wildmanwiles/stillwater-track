@@ -36,6 +36,60 @@ function findAthleteSlug(name) {
   return a ? `${a.first}-${a.last}`.toLowerCase() : null
 }
 
+function getEffectiveRecords() {
+  const effective = {
+    highSchool: {
+      boys: records.highSchool.boys.map(r => ({ ...r })),
+      girls: records.highSchool.girls.map(r => ({ ...r })),
+    },
+    jrHigh: {
+      boys: records.jrHigh.boys.map(r => ({ ...r })),
+      girls: records.jrHigh.girls.map(r => ({ ...r })),
+    }
+  }
+
+  for (const divKey of ['highSchool', 'jrHigh']) {
+    for (const genderKey of ['boys', 'girls']) {
+      const gender = genderKey === 'boys' ? 'M' : 'F'
+      for (const rec of effective[divKey][genderKey]) {
+        if (rec.event.includes('Relay') || rec.event.includes('Medley')) continue
+        const isTime = TIME_EVENTS.has(rec.event)
+
+        for (const meet of meetResults) {
+          for (const r of meet.results) {
+            if (r.event !== rec.event || r.gender !== gender) continue
+            if (r.mark === 'NH' || r.mark === 'DQ' || r.mark === 'DNS' || r.mark === 'DNF') continue
+            if (divKey === 'highSchool' && r.grade < 9) continue
+            if (divKey === 'jrHigh' && r.grade > 8) continue
+
+            const meetVal = isTime ? parseTime(r.mark) : parseMeasurement(r.mark)
+            if (meetVal === 0) continue
+
+            if (rec.mark === '—' || !rec.mark) {
+              rec.mark = r.mark
+              rec.athlete = r.athlete
+              rec.year = parseInt(meet.season)
+              rec.autoDetected = true
+              continue
+            }
+
+            const recVal = isTime ? parseTime(rec.mark) : parseMeasurement(rec.mark)
+            if ((isTime && meetVal < recVal) || (!isTime && meetVal > recVal)) {
+              rec.mark = r.mark
+              rec.athlete = r.athlete
+              rec.year = parseInt(meet.season)
+              rec.autoDetected = true
+            }
+          }
+        }
+      }
+    }
+  }
+  return effective
+}
+
+const effectiveRecords = getEffectiveRecords()
+
 function buildRecordWatch() {
   // Build season bests per athlete per event per gender
   const bests = {}
@@ -66,7 +120,7 @@ function buildRecordWatch() {
   for (const div of divisions) {
     for (const genderKey of ['boys', 'girls']) {
       const gender = genderKey === 'boys' ? 'M' : 'F'
-      const recs = records[div.key][genderKey]
+      const recs = effectiveRecords[div.key][genderKey]
 
       for (const rec of recs) {
         if (rec.mark === '—' || !rec.mark) continue
@@ -221,7 +275,7 @@ function RecordSection({ title, data }) {
           </thead>
           <tbody>
             {data.map(rec => (
-              <tr key={rec.event} className={`${rec.mark === '—' ? 'pending' : ''} ${rec.newRecord ? 'new-record' : ''}`}>
+              <tr key={rec.event} className={`${rec.mark === '—' ? 'pending' : ''} ${(rec.newRecord || rec.autoDetected) ? 'new-record' : ''}`}>
                 <td className="event-cell">{rec.event}</td>
                 <td className={`mark-cell ${rec.mark !== '—' ? 'has-record' : ''}`}>
                   {rec.mark}
@@ -229,7 +283,8 @@ function RecordSection({ title, data }) {
                 <td className="athlete-cell">{rec.athlete || '\u2014'}</td>
                 <td className="year-cell">
                   {rec.year || '\u2014'}
-                  {rec.newRecord && <span className="new-record-badge">NEW</span>}
+                  {rec.autoDetected && <span className="new-record-badge">NEW 2026</span>}
+                  {rec.newRecord && !rec.autoDetected && <span className="new-record-badge">NEW</span>}
                 </td>
               </tr>
             ))}
@@ -259,16 +314,16 @@ export default function Records() {
       <div className="records-division">
         <h2 className="records-division-title">High School Records</h2>
         <div className="records-grid">
-          <RecordSection title="Boys" data={records.highSchool.boys} />
-          <RecordSection title="Girls" data={records.highSchool.girls} />
+          <RecordSection title="Boys" data={effectiveRecords.highSchool.boys} />
+          <RecordSection title="Girls" data={effectiveRecords.highSchool.girls} />
         </div>
       </div>
 
       <div className="records-division">
         <h2 className="records-division-title">Jr. High Records</h2>
         <div className="records-grid">
-          <RecordSection title="Boys" data={records.jrHigh.boys} />
-          <RecordSection title="Girls" data={records.jrHigh.girls} />
+          <RecordSection title="Boys" data={effectiveRecords.jrHigh.boys} />
+          <RecordSection title="Girls" data={effectiveRecords.jrHigh.girls} />
         </div>
       </div>
     </div>

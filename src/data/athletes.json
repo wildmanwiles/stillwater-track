@@ -88,6 +88,18 @@
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28",
             "pr": true
+          },
+          {
+            "event": "100m",
+            "mark": "15.61",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "200m",
+            "mark": "32.29",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
           }
         ]
       }
@@ -257,6 +269,26 @@
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28",
             "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "29.50",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "100m Hurdles",
+            "mark": "19.37",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "300m Hurdles",
+            "mark": "55.06",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
           }
         ]
       }
@@ -404,6 +436,20 @@
             "mark": "14.02",
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28"
+          },
+          {
+            "event": "100m",
+            "mark": "13.37",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "27.48",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
           }
         ]
       }
@@ -430,7 +476,22 @@
       "110m Hurdles": "19.74",
       "300m Hurdles": "1:00.29"
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "200m",
+            "mark": "29.15",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 8,
@@ -509,6 +570,18 @@
             "mark": "15.54",
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28"
+          },
+          {
+            "event": "100m",
+            "mark": "15.31",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "200m",
+            "mark": "32.06",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
           }
         ]
       }
@@ -607,6 +680,26 @@
             "mark": "63'8\"",
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28"
+          },
+          {
+            "event": "Shot Put",
+            "mark": "23'3.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Discus",
+            "mark": "71'3\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Javelin",
+            "mark": "70'11\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
           }
         ]
       }
@@ -740,6 +833,26 @@
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28",
             "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "27.51",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Shot Put",
+            "mark": "26'6.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "Discus",
+            "mark": "87'9\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
           }
         ]
       }
@@ -761,7 +874,22 @@
     "prs": {
       "1600m": "7:50.48"
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "1600m",
+            "mark": "7:50.48",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 12,
@@ -874,6 +1002,27 @@
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28",
             "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "24.75",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "400m",
+            "mark": "55.75",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "1600m",
+            "mark": "4:52.49",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
           }
         ]
       }
@@ -899,7 +1048,43 @@
       "Discus": "45'6.50\"",
       "Javelin": "53'3.50\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 11,
+        "results": [
+          {
+            "event": "200m",
+            "mark": "30.84",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Shot Put",
+            "mark": "24'6.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Discus",
+            "mark": "45'6.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Javelin",
+            "mark": "53'3.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 14,
@@ -1019,6 +1204,25 @@
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28",
             "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "5'2\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "16'2.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "35'11\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
           }
         ]
       }
@@ -1117,6 +1321,26 @@
             "mark": "81'8\"",
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28"
+          },
+          {
+            "event": "Shot Put",
+            "mark": "25'8.25\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Discus",
+            "mark": "87'8\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Javelin",
+            "mark": "80'11\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
           }
         ]
       }
@@ -1155,7 +1379,36 @@
       "200m": "28.81",
       "Triple Jump": "30'7\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 10,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "13.60",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "28.81",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "30'7\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 18,
@@ -1187,31 +1440,156 @@
         "season": "2024",
         "grade": 8,
         "results": [
-          { "event": "400m", "mark": "1:10.04", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true },
-          { "event": "Long Jump", "mark": "12'8\"", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11" },
-          { "event": "Triple Jump", "mark": "29'7.75\"", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11" }
+          {
+            "event": "400m",
+            "mark": "1:10.04",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "12'8\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "29'7.75\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11"
+          }
         ]
       },
       {
         "season": "2025",
         "grade": 9,
         "results": [
-          { "event": "800m", "mark": "2:42.76", "meet": "Howard Dolphin Invitational", "date": "2025-03-29" },
-          { "event": "800m", "mark": "2:39.36", "meet": "Glenn Wolf Invite", "date": "2025-04-04" },
-          { "event": "800m", "mark": "2:34.28", "meet": "28th Annual Priest River Invite", "date": "2025-04-19", "pr": true },
-          { "event": "800m", "mark": "2:36.3h", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
-          { "event": "800m", "mark": "2:41.59", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" },
-          { "event": "1600m", "mark": "5:52.50", "meet": "Howard Dolphin Invitational", "date": "2025-03-29" },
-          { "event": "1600m", "mark": "5:50.81", "meet": "Glenn Wolf Invite", "date": "2025-04-04" },
-          { "event": "1600m", "mark": "5:48.43", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "1600m", "mark": "6:13.5h", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
-          { "event": "1600m", "mark": "5:44.43", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10", "pr": true },
-          { "event": "Long Jump", "mark": "15'11\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26", "pr": true },
-          { "event": "Long Jump", "mark": "15'3.25\"", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" },
-          { "event": "Triple Jump", "mark": "30'1\"", "meet": "Glenn Wolf Invite", "date": "2025-04-04" },
-          { "event": "Triple Jump", "mark": "31'3\"", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "Triple Jump", "mark": "33'5.75\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26", "pr": true },
-          { "event": "Triple Jump", "mark": "32'4.5\"", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" }
+          {
+            "event": "800m",
+            "mark": "2:42.76",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29"
+          },
+          {
+            "event": "800m",
+            "mark": "2:39.36",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04"
+          },
+          {
+            "event": "800m",
+            "mark": "2:34.28",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19",
+            "pr": true
+          },
+          {
+            "event": "800m",
+            "mark": "2:36.3h",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "800m",
+            "mark": "2:41.59",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10"
+          },
+          {
+            "event": "1600m",
+            "mark": "5:52.50",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29"
+          },
+          {
+            "event": "1600m",
+            "mark": "5:50.81",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04"
+          },
+          {
+            "event": "1600m",
+            "mark": "5:48.43",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "1600m",
+            "mark": "6:13.5h",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "1600m",
+            "mark": "5:44.43",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "15'11\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "15'3.25\"",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "30'1\"",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "31'3\"",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "33'5.75\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26",
+            "pr": true
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "32'4.5\"",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10"
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 10,
+        "results": [
+          {
+            "event": "High Jump",
+            "mark": "4'6\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "13'0.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "30'10\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          }
         ]
       }
     ]
@@ -1234,7 +1612,29 @@
       "1600m": "6:22.16",
       "Javelin": "52'4\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 10,
+        "results": [
+          {
+            "event": "1600m",
+            "mark": "6:22.16",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Javelin",
+            "mark": "52'4\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 20,
@@ -1265,22 +1665,132 @@
         "season": "2025",
         "grade": 9,
         "results": [
-          { "event": "100m", "mark": "13.54", "meet": "Howard Dolphin Invitational", "date": "2025-03-29" },
-          { "event": "100m", "mark": "12.84c", "meet": "Glenn Wolf Invite", "date": "2025-04-04", "pr": true },
-          { "event": "100m", "mark": "13.24", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "100m", "mark": "13.3h", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
-          { "event": "100m", "mark": "13.19", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" },
-          { "event": "200m", "mark": "28.64", "meet": "Howard Dolphin Invitational", "date": "2025-03-29" },
-          { "event": "200m", "mark": "27.80", "meet": "Glenn Wolf Invite", "date": "2025-04-04", "pr": true },
-          { "event": "200m", "mark": "28.53", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "400m", "mark": "1:07.27", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "400m", "mark": "1:03.75", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10", "pr": true },
-          { "event": "Long Jump", "mark": "14'11\"", "meet": "Howard Dolphin Invitational", "date": "2025-03-29" },
-          { "event": "Long Jump", "mark": "16'0.75\"", "meet": "Glenn Wolf Invite", "date": "2025-04-04", "pr": true },
-          { "event": "Long Jump", "mark": "15'3\"", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "Long Jump", "mark": "14'5\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
-          { "event": "Triple Jump", "mark": "31'11.5\"", "meet": "Glenn Wolf Invite", "date": "2025-04-04", "pr": true },
-          { "event": "Triple Jump", "mark": "30'9\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" }
+          {
+            "event": "100m",
+            "mark": "13.54",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29"
+          },
+          {
+            "event": "100m",
+            "mark": "12.84c",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04",
+            "pr": true
+          },
+          {
+            "event": "100m",
+            "mark": "13.24",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "100m",
+            "mark": "13.3h",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "100m",
+            "mark": "13.19",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10"
+          },
+          {
+            "event": "200m",
+            "mark": "28.64",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29"
+          },
+          {
+            "event": "200m",
+            "mark": "27.80",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "28.53",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "400m",
+            "mark": "1:07.27",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "400m",
+            "mark": "1:03.75",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "14'11\"",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "16'0.75\"",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "15'3\"",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "14'5\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "31'11.5\"",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04",
+            "pr": true
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "30'9\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 10,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "13.31",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "200m",
+            "mark": "27.41",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "14'6.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          }
         ]
       }
     ]
@@ -1324,7 +1834,36 @@
     "prs": {
       "200m": "29.16"
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 10,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "14.06",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "29.16",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "13'0.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 23,
@@ -1409,6 +1948,27 @@
             "mark": "27.07",
             "meet": "Ice Breaker Relays",
             "date": "2026-03-28"
+          },
+          {
+            "event": "100m",
+            "mark": "12.93",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "26.08",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Javelin",
+            "mark": "72'1\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
           }
         ]
       }
@@ -1454,27 +2014,129 @@
         "season": "2024",
         "grade": 8,
         "results": [
-          { "event": "High Jump", "mark": "4'8\"", "meet": "MCAA State", "date": "2024-05-17", "pr": true },
-          { "event": "Long Jump", "mark": "13'1\"", "meet": "MCAA State", "date": "2024-05-17", "pr": true },
-          { "event": "Triple Jump", "mark": "30'4\"", "meet": "MCAA State", "date": "2024-05-17", "pr": true }
+          {
+            "event": "High Jump",
+            "mark": "4'8\"",
+            "meet": "MCAA State",
+            "date": "2024-05-17",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "13'1\"",
+            "meet": "MCAA State",
+            "date": "2024-05-17",
+            "pr": true
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "30'4\"",
+            "meet": "MCAA State",
+            "date": "2024-05-17",
+            "pr": true
+          }
         ]
       },
       {
         "season": "2025",
         "grade": 9,
         "results": [
-          { "event": "High Jump", "mark": "4'4\"", "meet": "Howard Dolphin Invitational", "date": "2025-03-29" },
-          { "event": "High Jump", "mark": "4'6\"", "meet": "Glenn Wolf Invite", "date": "2025-04-04" },
-          { "event": "High Jump", "mark": "4'4\"", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "Long Jump", "mark": "12'3\"", "meet": "Howard Dolphin Invitational", "date": "2025-03-29" },
-          { "event": "Long Jump", "mark": "12'7.5\"", "meet": "Glenn Wolf Invite", "date": "2025-04-04" },
-          { "event": "Long Jump", "mark": "12'7\"", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "Long Jump", "mark": "11'10\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
-          { "event": "Triple Jump", "mark": "28'2\"", "meet": "Howard Dolphin Invitational", "date": "2025-03-29" },
-          { "event": "Triple Jump", "mark": "30'3.5\"", "meet": "Glenn Wolf Invite", "date": "2025-04-04" },
-          { "event": "Triple Jump", "mark": "29'6\"", "meet": "28th Annual Priest River Invite", "date": "2025-04-19" },
-          { "event": "Triple Jump", "mark": "28'8\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
-          { "event": "Triple Jump", "mark": "28'10.5\"", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" }
+          {
+            "event": "High Jump",
+            "mark": "4'4\"",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29"
+          },
+          {
+            "event": "High Jump",
+            "mark": "4'6\"",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04"
+          },
+          {
+            "event": "High Jump",
+            "mark": "4'4\"",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "12'3\"",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "12'7.5\"",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "12'7\"",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "11'10\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "28'2\"",
+            "meet": "Howard Dolphin Invitational",
+            "date": "2025-03-29"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "30'3.5\"",
+            "meet": "Glenn Wolf Invite",
+            "date": "2025-04-04"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "29'6\"",
+            "meet": "28th Annual Priest River Invite",
+            "date": "2025-04-19"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "28'8\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "28'10.5\"",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10"
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 10,
+        "results": [
+          {
+            "event": "High Jump",
+            "mark": "4'4\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "12'10.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "27'9.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          }
         ]
       }
     ]
@@ -1532,7 +2194,35 @@
       "High Jump": "4'8\"",
       "Long Jump": "12'9\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 9,
+        "results": [
+          {
+            "event": "200m",
+            "mark": "29.49",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "NH",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "12'9\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 29,
@@ -1566,24 +2256,119 @@
         "season": "2024",
         "grade": 7,
         "results": [
-          { "event": "800m", "mark": "2:42.2h", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true },
-          { "event": "1600m", "mark": "6:18.7h", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true },
-          { "event": "High Jump", "mark": "4'4\"", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true },
-          { "event": "Long Jump", "mark": "11'6.5\"", "meet": "MCAA State Track and Field Meet", "date": "2024-05-11", "pr": true }
+          {
+            "event": "800m",
+            "mark": "2:42.2h",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          },
+          {
+            "event": "1600m",
+            "mark": "6:18.7h",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "4'4\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "11'6.5\"",
+            "meet": "MCAA State Track and Field Meet",
+            "date": "2024-05-11",
+            "pr": true
+          }
         ]
       },
       {
         "season": "2025",
         "grade": 8,
         "results": [
-          { "event": "800m", "mark": "2:38.0h", "meet": "Stillwater Christian Invitational", "date": "2025-04-26", "pr": true },
-          { "event": "800m", "mark": "2:40.46", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" },
-          { "event": "1600m", "mark": "6:14.9h", "meet": "Stillwater Christian Invitational", "date": "2025-04-26", "pr": true },
-          { "event": "3200m", "mark": "13:34.41", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10", "pr": true },
-          { "event": "High Jump", "mark": "4'6\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
-          { "event": "High Jump", "mark": "4'8\"", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10", "pr": true },
-          { "event": "Long Jump", "mark": "10'5\"", "meet": "Stillwater Christian Invitational", "date": "2025-04-26" },
-          { "event": "Long Jump", "mark": "11'3\"", "meet": "Heritage State HS Triangular and MS Invite", "date": "2025-05-10" }
+          {
+            "event": "800m",
+            "mark": "2:38.0h",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26",
+            "pr": true
+          },
+          {
+            "event": "800m",
+            "mark": "2:40.46",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10"
+          },
+          {
+            "event": "1600m",
+            "mark": "6:14.9h",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26",
+            "pr": true
+          },
+          {
+            "event": "3200m",
+            "mark": "13:34.41",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "4'6\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "High Jump",
+            "mark": "4'8\"",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "10'5\"",
+            "meet": "Stillwater Christian Invitational",
+            "date": "2025-04-26"
+          },
+          {
+            "event": "Long Jump",
+            "mark": "11'3\"",
+            "meet": "Heritage State HS Triangular and MS Invite",
+            "date": "2025-05-10"
+          }
+        ]
+      },
+      {
+        "season": "2026",
+        "grade": 9,
+        "results": [
+          {
+            "event": "1600m",
+            "mark": "5:45.79",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "4'10\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Discus",
+            "mark": "61'9\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
         ]
       }
     ]
@@ -1683,7 +2468,29 @@
       "200m": "39.54",
       "Long Jump": "12'2\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 8,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "15.10",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "12'2\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 36,
@@ -1707,7 +2514,36 @@
       "High Jump": "3'8\"",
       "Triple Jump": "24'11.50\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 8,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "15.15",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "3'8\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "24'11.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 37,
@@ -1743,7 +2579,36 @@
       "Discus": "61'5\"",
       "Javelin": "45'0.50\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 8,
+        "results": [
+          {
+            "event": "Shot Put",
+            "mark": "22'8\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Discus",
+            "mark": "61'5\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Javelin",
+            "mark": "45'0.50\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 39,
@@ -1784,7 +2649,35 @@
       "300m Hurdles": "34.84",
       "High Jump": "4'4\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 8,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "14.75",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          },
+          {
+            "event": "100m Hurdles",
+            "mark": "19.17",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "High Jump",
+            "mark": "4'4\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 41,
@@ -1847,7 +2740,35 @@
       "110m Hurdles": "22.60",
       "Triple Jump": "30'7\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 8,
+        "results": [
+          {
+            "event": "100m",
+            "mark": "13.43",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "200m",
+            "mark": "27.73",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "30'3\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 44,
@@ -1899,7 +2820,22 @@
       "Long Jump": "11'7\"",
       "1600m": "6:19.53"
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 8,
+        "results": [
+          {
+            "event": "1600m",
+            "mark": "6:19.53",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 47,
@@ -1954,7 +2890,36 @@
       "High Jump": "5'0\"",
       "Triple Jump": "35'3\""
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 8,
+        "results": [
+          {
+            "event": "High Jump",
+            "mark": "5'0\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Long Jump",
+            "mark": "14'8\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "Triple Jump",
+            "mark": "35'3\"",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 50,
@@ -1975,7 +2940,29 @@
       "800m": "2:39.63",
       "1600m": "5:51.50"
     },
-    "active": true
+    "active": true,
+    "seasonHistory": [
+      {
+        "season": "2026",
+        "grade": 8,
+        "results": [
+          {
+            "event": "800m",
+            "mark": "2:39.63",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          },
+          {
+            "event": "1600m",
+            "mark": "5:51.50",
+            "meet": "Lincoln County Dual Meet",
+            "date": "2026-04-09",
+            "pr": true
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 51,

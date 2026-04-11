@@ -122,14 +122,14 @@
       {"gender":"F","event":"300m Hurdles","athlete":"Arwynn Steele","grade":12,"mark":"55.06","place":1,"pr":false},
       {"gender":"F","event":"Shot Put","athlete":"Emma Zeider","grade":11,"mark":"25'8.25\"","place":2,"pr":true},
       {"gender":"F","event":"Shot Put","athlete":"Helayna Iwen","grade":11,"mark":"23'3.50\"","place":3,"pr":true},
-      {"gender":"F","event":"Shot Put","athlete":"Mekayla Cannon","grade":8,"mark":"22'8\"","place":6,"pr":true},
+      {"gender":"F","event":"Shot Put","athlete":"Meka Cannon","grade":8,"mark":"22'8\"","place":6,"pr":true},
       {"gender":"F","event":"Discus","athlete":"Emma Zeider","grade":11,"mark":"87'8\"","place":2,"pr":true},
       {"gender":"F","event":"Discus","athlete":"Helayna Iwen","grade":11,"mark":"71'3\"","place":4,"pr":true},
-      {"gender":"F","event":"Discus","athlete":"Mekayla Cannon","grade":8,"mark":"61'5\"","place":6,"pr":true},
+      {"gender":"F","event":"Discus","athlete":"Meka Cannon","grade":8,"mark":"61'5\"","place":6,"pr":true},
       {"gender":"F","event":"Javelin","athlete":"Emma Zeider","grade":11,"mark":"80'11\"","place":2,"pr":false},
       {"gender":"F","event":"Javelin","athlete":"Helayna Iwen","grade":11,"mark":"70'11\"","place":3,"pr":false},
       {"gender":"F","event":"Javelin","athlete":"Gracie Broker","grade":10,"mark":"52'4\"","place":7,"pr":true},
-      {"gender":"F","event":"Javelin","athlete":"Mekayla Cannon","grade":8,"mark":"45'0.50\"","place":9,"pr":true},
+      {"gender":"F","event":"Javelin","athlete":"Meka Cannon","grade":8,"mark":"45'0.50\"","place":9,"pr":true},
       {"gender":"F","event":"High Jump","athlete":"Kendra Wolf","grade":10,"mark":"4'4\"","place":1,"pr":false},
       {"gender":"F","event":"High Jump","athlete":"Arden Dartez","grade":8,"mark":"4'4\"","place":2,"pr":true},
       {"gender":"F","event":"High Jump","athlete":"Whitney Brown","grade":8,"mark":"3'8\"","place":4,"pr":true},
@@ -144,7 +144,7 @@
       {"gender":"M","event":"4x400m Relay","mark":"4:00.45","place":1,"athletes":["Vincent DalleTezze","Bryson Wolf","Jay Erickson","Caleb Territo"]},
       {"gender":"M","event":"4x400m Relay","mark":"4:21.77","place":3,"athletes":["Isaac Blasdel","Elliot Schmautz","John Schaefer","Nathaniel Taturevych"]},
       {"gender":"F","event":"4x100m Relay","mark":"56.95","place":1,"athletes":["Cassie Henderson","Jolie Anderson","Finley Dean","Jasper Bailey"]},
-      {"gender":"F","event":"4x100m Relay","mark":"DQ","place":null,"athletes":["Averie Brown","Arden Dartez","Mekayla Cannon","Whitney Brown"]},
+      {"gender":"F","event":"4x100m Relay","mark":"DQ","place":null,"athletes":["Averie Brown","Arden Dartez","Meka Cannon","Whitney Brown"]},
       {"gender":"F","event":"4x400m Relay","mark":"4:49.55","place":1,"athletes":["Finley Dean","Kendra Wolf","Averie Brown","Jolie Anderson"]}
     ]
   }
